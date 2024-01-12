@@ -1,0 +1,400 @@
+Informacja: Sprawdzam footprint symbolu z listy sieci "L6:/5F2F834A/5F286A65:Inductors_SMD:L_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U21:/5F2F834A/5F286A72:Housings_SOIC:SSO-6_6.8x4.6mm_Pitch1.27mm_Clearance7mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C1:/5F46DDBD:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "M1:/5E8EE823/5EB59A8C/5EBB41D0:ff_lib:MODULE_NUCLEO-F746ZG".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L11:/5E8EE823/5ED32429:Inductors_SMD:L_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L10:/5E8EE823/5ECFD245:Inductors_SMD:L_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L9:/5E8EE823/5EE81AD4:Inductors_SMD:L_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L8:/5E8EE823/5ECFFDA2:Inductors_SMD:L_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L7:/5E8EE823/5EC61D4A:Inductors_SMD:L_12x12mm_h8mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U20:/5F2F834A/5FE68DB2:Housings_SOIC:SSO-6_6.8x4.6mm_Pitch1.27mm_Clearance7mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L5:/5F2F834A/5F286ABC:Inductors_SMD:L_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L4:/5F2F2DE7/5FE68DB7:Inductors_SMD:L_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L3:/5F2F2DE7/5F2F9753:Inductors_SMD:L_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L2:/5F26A61C/5F2F974A:Inductors_SMD:L_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "L1:/5F26A61C/5FE68DC0:Inductors_SMD:L_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JP3:/5E8EE823/5EA738D7:Connectors:GS2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JP2:/5E8EE823/5EA7351C:Connectors:GS2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JP1:/5E8EE823/5EA72EED:Connectors:GS2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U12:/5F2F2DE7/5FE68DB8:Housings_SOIC:SSO-6_6.8x4.6mm_Pitch1.27mm_Clearance7mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U4:/5F26A61C/5FE68DC1:ff_lib:AM1SS-xxxxS".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U5:/5F26A61C/5F2F9749:ff_lib:AM1SS-xxxxS".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U6:/5F26A61C/5F286A26:Housings_SSOP:MSOP-8_3x3mm_Pitch0.65mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U7:/5F26A61C/5F286897:Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U8:/5F26A61C/5F2F9706:Package_TO_SOT_SMD:SOT-23-5".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U9:/5F26A61C/5F286831:TO_SOT_Packages_THT:TO-220-11_Vertical_StaggeredType1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U10:/5F26A61C/5F2F9707:Package_TO_SOT_SMD:SOT-23-5".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U11:/5F2F2DE7/5F2F9745:Housings_SOIC:SSO-6_6.8x4.6mm_Pitch1.27mm_Clearance7mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JF8:/5E8EE823/5F249CA5:Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U13:/5F2F2DE7/5F2F9754:ff_lib:AM1SS-xxxxS".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U14:/5F2F2DE7/5FE68DB6:ff_lib:AM1SS-xxxxS".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U15:/5F2F2DE7/5F2F9743:Housings_SSOP:MSOP-8_3x3mm_Pitch0.65mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U16:/5F2F2DE7/5F2F9717:Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U17:/5F2F2DE7/5FE68D73:Package_TO_SOT_SMD:SOT-23-5".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U18:/5F2F2DE7/5F2F970C:TO_SOT_Packages_THT:TO-220-11_Vertical_StaggeredType1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U19:/5F2F2DE7/5FE68D74:Package_TO_SOT_SMD:SOT-23-5".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D27:/5F2F834A/5FE68DA5:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "J5:/5E8EE823/5EB59A8C/5ED582E9:Connectors_Card:Hirose_DM3BT-DSF-PEJS".
+Informacja: Sprawdzam footprint symbolu z listy sieci "J4:/5E8EE823/5ED02114:TerminalBlock:TerminalBlock_bornier-2_P5.08mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "J3:/5F2F834A/5F2867CC:TerminalBlock:TerminalBlock_bornier-2_P5.08mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "J2:/5F2F2DE7/5FE68D72:TerminalBlock:TerminalBlock_bornier-2_P5.08mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "J1:/5F26A61C/5F2F9705:TerminalBlock:TerminalBlock_bornier-2_P5.08mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "FAN1:/5E8EE823/5F5D9A13:TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-3.5mm_2pol".
+Informacja: Sprawdzam footprint symbolu z listy sieci "DAC1:/5E8EE823/5EB59A8C/5EC84B9D:Connectors:GS2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D29:/5E8EE823/5EAB0971:Diodes_SMD:D_SOD-123F".
+Informacja: Sprawdzam footprint symbolu z listy sieci "J6:/5E8EE823/5F0B47A2:Connectors_DSub:DSUB-9_Male_Horizontal_Pitch2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D26:/5F2F834A/5F28695F:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D25:/5F2F834A/5F286966:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D24:/5F2F834A/5FE68DA7:Diodes_SMD:D_SMC".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D23:/5F2F834A/5FE68DA6:Diodes_SMD:D_SMC".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D22:/5F2F834A/5F286958:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D21:/5F2F834A/5F2867AE:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D20:/5F2F834A/5F28696D:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U23:/5F2F834A/5F286A5E:ff_lib:AM1SS-xxxxS".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JF7:/5E8EE823/5F249CB2:Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JF6:/5E8EE823/5F249CBF:Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JF5:/5E8EE823/5F249CCC:Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JF4:/5E8EE823/5F21A746:Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JF3:/5E8EE823/5F21A739:Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JF2:/5E8EE823/5F204D87:Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal".
+Informacja: Sprawdzam footprint symbolu z listy sieci "JF1:/5E8EE823/5F1D2B44:Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U22:/5F2F834A/5F286AD4:ff_lib:AM1SS-xxxxS".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U3:/5F26A61C/5F2F974B:Housings_SOIC:SSO-6_6.8x4.6mm_Pitch1.27mm_Clearance7mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U24:/5F2F834A/5FE68DB0:Housings_SSOP:MSOP-8_3x3mm_Pitch0.65mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U25:/5F2F834A/5FE68D84:Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U26:/5F2F834A/5F2867EC:Package_TO_SOT_SMD:SOT-23-5".
+Informacja: Sprawdzam footprint symbolu z listy sieci "J7:/5E8EE823/5F1F22D1:Connectors_DSub:DSUB-9_Male_Horizontal_Pitch2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U27:/5F2F834A/5FE68D79:TO_SOT_Packages_THT:TO-220-11_Vertical_StaggeredType1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U28:/5F2F834A/5F2867F4:Package_TO_SOT_SMD:SOT-23-5".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U29:/5E8EE823/5ED56E64:Housings_SOIC:SOIC-16W_7.5x10.3mm_Pitch1.27mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R10:/5F26A61C/5F2F970D:Resistors_SMD:R_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R18:/5F2F2DE7/5F286876:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R17:/5F2F2DE7/5FE68D7F:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R16:/5F2F2DE7/5F28686A:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R15:/5F2F2DE7/5F286864:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R14:/5F2F2DE7/5F2F9746:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R13:/5F2F2DE7/5FE68DB9:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R12:/5F26A61C/5F2F970A:Resistors_SMD:R_1206".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R11:/5F26A61C/5F2F9708:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R19:/5F2F2DE7/5F2F9741:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R9:/5F26A61C/5FE68D7B:Resistors_SMD:R_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R8:/5F26A61C/5F2F973D:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R7:/5F26A61C/5F286A13:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R6:/5F26A61C/5F2F9713:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R5:/5F26A61C/5F2F9712:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R4:/5F26A61C/5F2F9711:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R3:/5F26A61C/5F2F9710:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R27:/5F2F834A/5FE68D7D:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R35:/5F2F834A/5F286806:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R34:/5F2F834A/5FE68D7A:Resistors_SMD:R_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R33:/5F2F834A/5F286842:Resistors_SMD:R_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R32:/5F2F834A/5F2869FA:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R31:/5F2F834A/5FE68DAE:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R30:/5F2F834A/5FE68D80:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R29:/5F2F834A/5F286870:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R28:/5F2F834A/5FE68D7E:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R2:/5F26A61C/5F286A48:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R26:/5F2F834A/5FE68DB3:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R25:/5F2F834A/5F286A8A:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R24:/5F2F2DE7/5F286818:Resistors_SMD:R_1206".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R23:/5F2F2DE7/5FE68D75:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R22:/5F2F2DE7/5F28683C:Resistors_SMD:R_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R21:/5F2F2DE7/5F2F970E:Resistors_SMD:R_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R20:/5F2F2DE7/5FE68DAA:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "M2:/5E8EE823/5EB59A8C/5EC7AEF3:ff_lib:ZL26ARM".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T2:/5F26A61C/5F2F9702:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T3:/5F26A61C/5F2F9703:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T4:/5F26A61C/5F2F9704:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T5:/5F2F2DE7/5FE68D6E:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T6:/5F2F2DE7/5F2867BA:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T7:/5F2F2DE7/5FE68D70:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T8:/5F2F2DE7/5FE68D71:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T9:/5F2F834A/5F2867B4:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T1:/5F26A61C/5F2F9701:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T10:/5F2F834A/5FE68D6F:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T11:/5F2F834A/5F2867C0:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "T12:/5F2F834A/5F2867C6:Package_TO_SOT_SMD:TO-252-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "TH1:/5E8EE823/5EB59A8C/5ED628E4:Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical".
+Informacja: Sprawdzam footprint symbolu z listy sieci "TH2:/5E8EE823/5EB59A8C/5EDAF5B4:Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U1:/5F3A3945:Housings_SSOP:VSSOP-8_2.3x2mm_Pitch0.5mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U2:/5F26A61C/5F286A3B:Housings_SOIC:SSO-6_6.8x4.6mm_Pitch1.27mm_Clearance7mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PD3:/5EFEFE24:Fiducials:Fiducial_classic_Small_CopperTop_Type1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R1:/5F26A61C/5F2F974C:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PR3:/5F2F834A/5FE68D83:Potentiometers:Potentiometer_Trimmer_Bourns_3296Y".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PR2:/5F2F2DE7/5F2F9716:Potentiometers:Potentiometer_Trimmer_Bourns_3296Y".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PR1:/5F26A61C/5F286891:Potentiometers:Potentiometer_Trimmer_Bourns_3296Y".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PD7:/5F059C76:ff_lib:Heatsink_50x50x150mm_with_fan".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PD6:/5EFF14F9:Fiducials:Fiducial_classic_Small_CopperBottom_Type1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PD5:/5EFF1294:Fiducials:Fiducial_classic_Small_CopperBottom_Type1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PD4:/5EFF0F97:Fiducials:Fiducial_classic_Small_CopperBottom_Type1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D28:/5E8EE823/5F56DED8:Diodes_SMD:D_SMA".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PD2:/5EFF0B3E:Fiducials:Fiducial_classic_Small_CopperTop_Type1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "PD1:/5EFF0D73:Fiducials:Fiducial_classic_Small_CopperTop_Type1".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R36:/5F2F834A/5FE68D77:Resistors_SMD:R_1206".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R37:/5E8EE823/5EAF5117:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R38:/5E8EE823/5EAF5881:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R39:/5E8EE823/5EB59A8C/5ED61BD7:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "R40:/5E8EE823/5EB59A8C/5EDAF5AE:Resistors_SMD:R_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C40:/5F2F2DE7/5F2F9728:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C47:/5F2F834A/5F2868DE:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C46:/5F2F834A/5F2868B9:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C45:/5F2F834A/5FE68D86:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C44:/5F2F834A/5F286A52:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C43:/5F2F834A/5F286AE0:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U33:/5E8EE823/5ECFFDBE:ff_lib:AM1SS-xxxxS".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C42:/5F2F834A/5F2868AC:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C41:/5F2F2DE7/5F2F96FF:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C48:/5F2F834A/5FE68D89:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C39:/5F2F2DE7/5F286934:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C38:/5F2F2DE7/5FE68D76:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C37:/5F2F2DE7/5F2F9725:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C36:/5F2F2DE7/5F2F9723:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C35:/5F2F2DE7/5F2F9740:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C34:/5F2F2DE7/5FE68D91:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C33:/5F2F2DE7/5F2F9722:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C32:/5F2F2DE7/5F2F9726:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C57:/5F2F834A/5FE68D92:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C64:/5E8EE823/5EA84D1C:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U32:/5E8EE823/5EA9388B:Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C63:/5E8EE823/5EA40F7B:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C62:/5E8EE823/5EA8CE0B:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C61:/5F2F834A/5FE68D6C:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C60:/5F2F834A/5FE68D95:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C59:/5F2F834A/5FE68D94:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C58:/5F2F834A/5F28680C:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C31:/5F2F2DE7/5FE68DB5:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C56:/5F2F834A/5F2868FF:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C55:/5F2F834A/5FE68DAD:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C54:/5F2F834A/5F286905:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C53:/5F2F834A/5FE68D8F:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C52:/5F2F834A/5FE68D93:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C51:/5F2F834A/5F286A58:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C50:/5F2F834A/5F286ADA:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C49:/5F2F834A/5F2868D8:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U38:/5E8EE823/5EB68EFE:Housings_SOIC:SOIC-16W_7.5x10.3mm_Pitch1.27mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C16:/5F26A61C/5FE68D90:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C15:/5F26A61C/5F286A0D:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C14:/5F26A61C/5F2F9724:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C13:/5F26A61C/5F2868F9:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C12:/5F26A61C/5F286911:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C11:/5F26A61C/5F2F9748:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C10:/5F26A61C/5FE68DC2:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C9:/5F26A61C/5F2F971E:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C17:/5F26A61C/5F28690B:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C8:/5F26A61C/5F2F971C:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C7:/5F26A61C/5FE68D8C:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C6:/5F26A61C/5F2F971B:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C5:/5F26A61C/5F2868A6:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C4:/5F26A61C/5F2F9747:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C3:/5F26A61C/5FE68DC3:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U39:/5E8EE823/5EC4951B:Housings_SOIC:SOIC-16_3.9x9.9mm_Pitch1.27mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C2:/5F26A61C/5F2F971A:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C25:/5F2F2DE7/5F2F9719:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C30:/5F2F2DE7/5F2F9755:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C29:/5F2F2DE7/5FE68D8B:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U34:/5E8EE823/5ED00EF9:Housings_SSOP:MSOP-8_3x3mm_Pitch0.65mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C28:/5F2F2DE7/5F2868C3:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C27:/5F2F2DE7/5F2F971F:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U35:/5E8EE823/5ECFD237:Housings_SSOP:MSOP-8_3x3mm_Pitch0.65mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C26:/5F2F2DE7/5FE68D88:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U36:/5E8EE823/5ED3241B:Housings_SSOP:MSOP-8_3x3mm_Pitch0.65mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D18:/5F2F2DE7/5F2F9738:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C24:/5F2F2DE7/5FE68DB4:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C23:/5F2F2DE7/5F2F9756:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U37:/5E8EE823/5EAA3B11:TO_SOT_Packages_SMD:TO-263-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C22:/5F2F2DE7/5FE68D87:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C21:/5F26A61C/5F2867A7:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C20:/5F26A61C/5F28693A:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C19:/5F26A61C/5F2F9727:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C18:/5F26A61C/5F2F9709:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C91:/5E8EE823/5EB59A8C/5ECB8D8E:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C100:/5E8EE823/5EB59A8C/5EDAF5C0:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C99:/5E8EE823/5EB59A8C/5ED6BBB8:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C98:/5E8EE823/5ECFB9F8:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C97:/5E8EE823/5EF033FD:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C96:/5E8EE823/5ECF7336:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C95:/5E8EE823/5EECD7A8:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C94:/5E8EE823/5ECC6C92:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C93:/5E8EE823/5EB59A8C/5EDF11B7:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C92:/5E8EE823/5EB59A8C/5ECE2EE4:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D1:/5F26A61C/5F2F973C:Package_TO_SOT_SMD:SOT-23".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C90:/5E8EE823/5EB59A8C/5ECE2EEE:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C89:/5E8EE823/5EB59A8C/5ECB8D94:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C88:/5E8EE823/5EABB0F3:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C86:/5E8EE823/5ED32460:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C85:/5E8EE823/5ED3248F:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C84:/5E8EE823/5ED32485:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C83:/5E8EE823/5ECFD27E:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C82:/5E8EE823/5ECFD2AD:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D10:/5F2F2DE7/5F2869F4:Package_TO_SOT_SMD:SOT-23".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D19:/5F2F834A/5FE68DA9:Package_TO_SOT_SMD:SOT-23".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D17:/5F2F2DE7/5FE68D97:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D16:/5F2F2DE7/5FE68D98:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D15:/5F2F2DE7/5F2869C8:Diodes_SMD:D_SMC".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D14:/5F2F2DE7/5F2869C2:Diodes_SMD:D_SMC".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D13:/5F2F2DE7/5FE68D96:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D12:/5F2F2DE7/5F2F9700:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U30:/5E8EE823/5ED5F752:Housings_SOIC:SOIC-16W_7.5x10.3mm_Pitch1.27mm".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D11:/5F2F2DE7/5FE68D99:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C87:/5E8EE823/5EAA4643:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D9:/5F26A61C/5F2869BC:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D8:/5F26A61C/5F2F972A:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D7:/5F26A61C/5F2F972B:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D6:/5F26A61C/5F2F973A:Diodes_SMD:D_SMC".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D5:/5F26A61C/5F2F9739:Diodes_SMD:D_SMC".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D4:/5F26A61C/5F2F9729:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D3:/5F26A61C/5FE68D6D:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "D2:/5F26A61C/5F2F972C:Diodes_SMD:D_SMB".
+Informacja: Sprawdzam footprint symbolu z listy sieci "U31:/5E8EE823/5EA4A7C7:TO_SOT_Packages_SMD:TO-263-2".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C67:/5E8EE823/5EA427EC:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C68:/5E8EE823/5ECFFDD2:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C69:/5E8EE823/5EA427F2:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C66:/5E8EE823/5EA84D11:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C70:/5E8EE823/5EAA89D1:Capacitors_SMD:C_0805".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C71:/5E8EE823/5F09ACE6:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C72:/5E8EE823/5F09A7B3:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C73:/5E8EE823/5EAC324F:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C74:/5E8EE823/5EAC3244:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C79:/5E8EE823/5ED49BBB:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C80:/5E8EE823/5EE99308:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C75:/5E8EE823/5EAC3239:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C78:/5E8EE823/5ED49BC1:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C77:/5E8EE823/5F5E1251:Capacitors_SMD:C_0603".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C81:/5E8EE823/5ECFD2A3:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C76:/5E8EE823/5ECFFDC8:Capacitors_SMD:C_1210".
+Informacja: Sprawdzam footprint symbolu z listy sieci "C65:/5E8EE823/5EA40F75:Capacitors_SMD:C_0603".
+Zmieniam nazwę sieci footprintu U12 pole 2 z  na Net-(U12-Pad2).
+Zmieniam nazwę sieci footprintu U38 pole 10 z  na Net-(U38-Pad10).
+Zmieniam nazwę sieci footprintu U29 pole 7 z  na Net-(U29-Pad7).
+Zmieniam nazwę sieci footprintu U38 pole 7 z  na Net-(U38-Pad7).
+Zmieniam nazwę sieci footprintu U9 pole 11 z  na +12V.
+Zmieniam nazwę sieci footprintu U9 pole 10 z  na +12V.
+Zmieniam nazwę sieci footprintu U9 pole 9 z  na Net-(U9-Pad9).
+Zmieniam nazwę sieci footprintu M1 pole CN10_34 z  na Net-(M1-PadCN10_34).
+Zmieniam nazwę sieci footprintu U32 pole 2 z  na Net-(U32-Pad2).
+Zmieniam nazwę sieci footprintu U16 pole 5 z  na Net-(U16-Pad5).
+Zmieniam nazwę sieci footprintu U7 pole 5 z  na Net-(U7-Pad5).
+Zmieniam nazwę sieci footprintu U30 pole 10 z  na Net-(U30-Pad10).
+Zmieniam nazwę sieci footprintu U11 pole 2 z  na Net-(U11-Pad2).
+Zmieniam nazwę sieci footprintu U27 pole 10 z  na +12V.
+Zmieniam nazwę sieci footprintu U31 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu U32 pole 7 z  na +12V.
+Zmieniam nazwę sieci footprintu U32 pole 5 z  na Net-(U32-Pad5).
+Zmieniam nazwę sieci footprintu U32 pole 3 z  na Net-(U32-Pad3).
+Zmieniam nazwę sieci footprintu U21 pole 2 z  na Net-(U21-Pad2).
+Zmieniam nazwę sieci footprintu U25 pole 5 z  na Net-(U25-Pad5).
+Zmieniam nazwę sieci footprintu U20 pole 2 z  na Net-(U20-Pad2).
+Zmieniam nazwę sieci footprintu U27 pole 11 z  na +12V.
+Zmieniam nazwę sieci footprintu U18 pole 9 z  na Net-(U18-Pad9).
+Zmieniam nazwę sieci footprintu U27 pole 9 z  na Net-(U27-Pad9).
+Zmieniam nazwę sieci footprintu U2 pole 2 z  na Net-(U2-Pad2).
+Zmieniam nazwę sieci footprintu U30 pole 7 z  na Net-(U30-Pad7).
+Zmieniam nazwę sieci footprintu U18 pole 11 z  na +12V.
+Zmieniam nazwę sieci footprintu U3 pole 2 z  na Net-(U3-Pad2).
+Zmieniam nazwę sieci footprintu U29 pole 10 z  na Net-(U29-Pad10).
+Zmieniam nazwę sieci footprintu U18 pole 10 z  na +12V.
+Zmieniam nazwę sieci footprintu J7 pole 1 z  na Net-(J7-Pad1).
+Zmieniam nazwę sieci footprintu J6 pole 4 z  na Net-(J6-Pad4).
+Zmieniam nazwę sieci footprintu J6 pole 6 z  na Net-(J6-Pad6).
+Zmieniam nazwę sieci footprintu J6 pole 7 z  na Net-(J6-Pad7).
+Zmieniam nazwę sieci footprintu J6 pole 8 z  na Net-(J6-Pad8).
+Zmieniam nazwę sieci footprintu J6 pole 9 z  na Net-(J6-Pad9).
+Zmieniam nazwę sieci footprintu J7 pole 9 z  na Net-(J7-Pad9).
+Zmieniam nazwę sieci footprintu J7 pole 8 z  na Net-(J7-Pad8).
+Zmieniam nazwę sieci footprintu J7 pole 7 z  na Net-(J7-Pad7).
+Zmieniam nazwę sieci footprintu J7 pole 6 z  na Net-(J7-Pad6).
+Zmieniam nazwę sieci footprintu J7 pole 4 z  na Net-(J7-Pad4).
+Zmieniam nazwę sieci footprintu J6 pole 1 z  na Net-(J6-Pad1).
+Zmieniam nazwę sieci footprintu M1 pole CN9_30 z  na Net-(M1-PadCN9_30).
+Zmieniam nazwę sieci footprintu M1 pole CN9_29 z  na Net-(M1-PadCN9_29).
+Zmieniam nazwę sieci footprintu M1 pole CN7_20 z  na Net-(M1-PadCN7_20).
+Zmieniam nazwę sieci footprintu M1 pole CN7_19 z  na Net-(M1-PadCN7_19).
+Zmieniam nazwę sieci footprintu M1 pole CN7_18 z  na Net-(M1-PadCN7_18).
+Zmieniam nazwę sieci footprintu M1 pole CN7_16 z  na Net-(M1-PadCN7_16).
+Zmieniam nazwę sieci footprintu M1 pole CN7_15 z  na Net-(M1-PadCN7_15).
+Zmieniam nazwę sieci footprintu M1 pole CN7_14 z  na Net-(M1-PadCN7_14).
+Zmieniam nazwę sieci footprintu M1 pole CN7_9 z  na Net-(M1-PadCN7_9).
+Zmieniam nazwę sieci footprintu M1 pole CN7_7 z  na Net-(M1-PadCN7_7).
+Zmieniam nazwę sieci footprintu C46 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C2 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C5 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C6 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C8 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C22 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C25 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C26 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C28 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C42 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C45 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu M2 pole B28 z  na Net-(M2-PadB28).
+Zmieniam nazwę sieci footprintu C48 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C62 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C63 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C64 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C65 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu C66 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu D2 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu D11 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu D20 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu J4 pole 1 z  na +12V.
+Zmieniam nazwę sieci footprintu M2 pole A7 z  na Net-(M2-PadA7).
+Zmieniam nazwę sieci footprintu M1 pole CN9_19 z  na Net-(M1-PadCN9_19).
+Zmieniam nazwę sieci footprintu M1 pole CN9_17 z  na Net-(M1-PadCN9_17).
+Zmieniam nazwę sieci footprintu M1 pole CN9_14 z  na Net-(M1-PadCN9_14).
+Zmieniam nazwę sieci footprintu M1 pole CN9_13 z  na Net-(M1-PadCN9_13).
+Zmieniam nazwę sieci footprintu M1 pole CN9_11 z  na Net-(M1-PadCN9_11).
+Zmieniam nazwę sieci footprintu M1 pole CN8_9 z  na Net-(M1-PadCN8_9).
+Zmieniam nazwę sieci footprintu M1 pole CN8_7 z  na Net-(M1-PadCN8_7).
+Zmieniam nazwę sieci footprintu M1 pole CN8_5 z  na Net-(M1-PadCN8_5).
+Zmieniam nazwę sieci footprintu M2 pole A28 z  na Net-(M2-PadA28).
+Zmieniam nazwę sieci footprintu M2 pole A26 z  na Net-(M2-PadA26).
+Zmieniam nazwę sieci footprintu M1 pole CN7_5 z  na Net-(M1-PadCN7_5).
+Zmieniam nazwę sieci footprintu M2 pole A6 z  na Net-(M2-PadA6).
+Zmieniam nazwę sieci footprintu M2 pole A4 z  na Net-(M2-PadA4).
+Zmieniam nazwę sieci footprintu M2 pole A3 z  na Net-(M2-PadA3).
+Zmieniam nazwę sieci footprintu M2 pole B2 z  na Net-(M2-PadB2).
+Zmieniam nazwę sieci footprintu M2 pole B3 z  na Net-(M2-PadB3).
+Zmieniam nazwę sieci footprintu M2 pole B8 z  na Net-(M2-PadB8).
+Zmieniam nazwę sieci footprintu M2 pole B24 z  na Net-(M2-PadB24).
+Zmieniam nazwę sieci footprintu M2 pole B26 z  na Net-(M2-PadB26).
+Zmieniam nazwę sieci footprintu M2 pole B27 z  na Net-(M2-PadB27).
+Zmieniam nazwę sieci footprintu M2 pole B29 z  na Net-(M2-PadB29).
+Zmieniam nazwę sieci footprintu M1 pole CN9_24 z  na Net-(M1-PadCN9_24).
+Zmieniam nazwę sieci footprintu M1 pole CN7_6 z  na Net-(M1-PadCN7_6).
+Zmieniam nazwę sieci footprintu M1 pole CN10_32 z  na Net-(M1-PadCN10_32).
+Zmieniam nazwę sieci footprintu M1 pole CN10_31 z  na Net-(M1-PadCN10_31).
+Zmieniam nazwę sieci footprintu M1 pole CN10_29 z  na Net-(M1-PadCN10_29).
+Zmieniam nazwę sieci footprintu M1 pole CN10_23 z  na Net-(M1-PadCN10_23).
+Zmieniam nazwę sieci footprintu M1 pole CN10_21 z  na Net-(M1-PadCN10_21).
+Zmieniam nazwę sieci footprintu M1 pole CN10_19 z  na Net-(M1-PadCN10_19).
+Zmieniam nazwę sieci footprintu M1 pole CN10_16 z  na Net-(M1-PadCN10_16).
+Zmieniam nazwę sieci footprintu M1 pole CN10_15 z  na Net-(M1-PadCN10_15).
+Zmieniam nazwę sieci footprintu M1 pole CN10_14 z  na Net-(M1-PadCN10_14).
+Zmieniam nazwę sieci footprintu M1 pole CN10_12 z  na Net-(M1-PadCN10_12).
+Zmieniam nazwę sieci footprintu M1 pole CN10_11 z  na Net-(M1-PadCN10_11).
+Zmieniam nazwę sieci footprintu M1 pole CN10_9 z  na Net-(M1-PadCN10_9).
+Zmieniam nazwę sieci footprintu M1 pole CN10_8 z  na Net-(M1-PadCN10_8).
+Zmieniam nazwę sieci footprintu M1 pole CN10_7 z  na Net-(M1-PadCN10_7).
+Zmieniam nazwę sieci footprintu M1 pole CN10_2 z  na Net-(M1-PadCN10_2).
+Zmieniam nazwę sieci footprintu M1 pole CN10_1 z  na Net-(M1-PadCN10_1).
+Zmieniam nazwę sieci footprintu M1 pole CN9_28 z  na Net-(M1-PadCN9_28).
+Zmieniam nazwę sieci footprintu M1 pole CN9_26 z  na Net-(M1-PadCN9_26).
+Zmieniam nazwę sieci footprintu M1 pole CN9_21 z  na Net-(M1-PadCN9_21).
+Błąd: Komponent PD1, pole 1 nie zostało znalezione w footprincie Fiducials:Fiducial_classic_Small_CopperTop_Type1.
+
+
+Błąd: Komponent PD2, pole 1 nie zostało znalezione w footprincie Fiducials:Fiducial_classic_Small_CopperTop_Type1.
+
+
+Błąd: Komponent PD3, pole 1 nie zostało znalezione w footprincie Fiducials:Fiducial_classic_Small_CopperTop_Type1.
+
+
+Błąd: Komponent PD4, pole 1 nie zostało znalezione w footprincie Fiducials:Fiducial_classic_Small_CopperBottom_Type1.
+
+
+Błąd: Komponent PD5, pole 1 nie zostało znalezione w footprincie Fiducials:Fiducial_classic_Small_CopperBottom_Type1.
+
+
+Błąd: Komponent PD6, pole 1 nie zostało znalezione w footprincie Fiducials:Fiducial_classic_Small_CopperBottom_Type1.
+
+
