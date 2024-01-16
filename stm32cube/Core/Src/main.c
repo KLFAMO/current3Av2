@@ -39,7 +39,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define PORT	22
-#define SERVER	"192.168.3.123"
+#define SERVER	"192.168.3.111"
 
 #define MAX(a,b) (((a)>(b))?(a):(b))
 /* USER CODE END PD */
