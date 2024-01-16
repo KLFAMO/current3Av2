@@ -1,0 +1,190 @@
+Circuit: * J:\Projekty\FAMO\current3A\symulacje\current_amp_full.asc
+
+WARNING: Less than two connections to node N002.  This node is used by R5.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Increasing initial diagonal Gmin to 1000
+Gmin = 1000
+Gmin = 107.374
+Gmin = 11.5292
+vernier = 0.5
+Gmin = 2.388
+vernier = 0.25
+vernier = 0.125
+Gmin = 1.76194
+vernier = 0.166667
+vernier = 0.0833333
+Gmin = 1.44919
+vernier = 0.111111
+vernier = 0.0555555
+vernier = 0.0277778
+Gmin = 1.35255
+vernier = 0.037037
+vernier = 0.0185185
+Gmin = 1.27678
+vernier = 0.0246913
+vernier = 0.0123457
+Gmin = 1.22858
+vernier = 0.0164609
+vernier = 0.0219478
+Gmin = 1.18116
+vernier = 0.0109739
+vernier = 0.0146319
+vernier = 0.00731595
+Gmin = 1.16721
+vernier = 0.00975459
+vernier = 0.0130061
+Gmin = 1.14028
+vernier = 0.00650306
+vernier = 0.00867074
+vernier = 0.00433537
+Gmin = 1.13228
+vernier = 0.00578049
+vernier = 0.00770732
+Gmin = 1.11672
+vernier = 0.00385366
+vernier = 0.00513821
+Gmin = 1.10779
+vernier = 0.00685095
+vernier = 0.00342548
+vernier = 0.0045673
+Gmin = 1.09898
+vernier = 0.00228365
+Gmin = 1.0921
+vernier = 0.00304487
+vernier = 0.00405982
+vernier = 0.00202991
+Gmin = 1.08603
+vernier = 0.00270655
+vernier = 0.00360873
+Gmin = 1.07901
+vernier = 0.00180436
+vernier = 0.00240582
+Gmin = 1.07496
+vernier = 0.00320776
+vernier = 0.00160388
+vernier = 0.0021385
+Gmin = 1.07095
+vernier = 0.00285134
+vernier = 0.00142567
+Gmin = 1.06695
+vernier = 0.00190089
+vernier = 0.00253452
+vernier = 0.00126726
+Gmin = 1.06315
+vernier = 0.00168968
+Gmin = 1.05923
+vernier = 0.00225291
+vernier = 0.00112645
+vernier = 0.00150194
+Gmin = 1.0565
+vernier = 0.00200258
+vernier = 0.00100129
+Gmin = 1.05386
+vernier = 0.00133505
+vernier = 0.00178007
+vernier = 0.000890036
+Gmin = 1.05125
+vernier = 0.00118671
+Gmin = 1.04845
+vernier = 0.00158229
+vernier = 0.000791143
+vernier = 0.00105486
+Gmin = 1.04659
+vernier = 0.00140648
+vernier = 0.000703238
+Gmin = 1.04484
+vernier = 0.00093765
+vernier = 0.0012502
+vernier = 0.0006251
+Gmin = 1.04305
+vernier = 0.000833466
+vernier = 0.00111129
+Gmin = 1.04097
+vernier = 0.000555644
+vernier = 0.000740858
+Gmin = 1.03976
+vernier = 0.000987811
+vernier = 0.000493906
+vernier = 0.000658541
+Gmin = 1.03856
+vernier = 0.000878054
+vernier = 0.000439027
+Gmin = 1.03737
+vernier = 0.000585369
+vernier = 0.000780492
+vernier = 0.000585369
+Gmin = 1.03623
+vernier = 0.000780492
+vernier = 0.000585369
+Gmin = 1.03502
+vernier = 0.000780491
+vernier = 0.000585369
+vernier = 0.000780491
+Gmin = 1.03376
+vernier = 0.000585368
+vernier = 0.000439026
+Gmin = 1.03301
+vernier = 0.000585368
+vernier = 0.000439026
+vernier = 0.000585368
+Gmin = 1.03207
+vernier = 0.000439026
+vernier = 0.000585368
+vernier = 0.000439026
+Gmin = 1.03143
+vernier = 0.000585368
+vernier = 0.000439026
+Gmin = 1.03052
+vernier = 0.000585368
+vernier = 0.000439026
+vernier = 0.000585368
+vernier = 0.000439026
+Gmin = 1.02984
+vernier = 0.000585367
+vernier = 0.000439026
+Gmin = 1.02894
+vernier = 0.000585367
+vernier = 0.000439025
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+vernier = 0.25
+Source Step = 7.57576%
+Source Step = 15.1515%
+Source Step = 22.7273%
+Source Step = 30.303%
+Source Step = 37.8788%
+vernier = 0.375
+Source Step = 48.8636%
+Source Step = 60.2273%
+Source Step = 71.5909%
+Source Step = 82.9545%
+Source Step = 94.3182%
+vernier = 0.5625
+Source stepping succeeded in finding the operating point.
+
+Ignoring empty pin current: Ix(u2:4)
+Ignoring empty pin current: Ix(u2:4)
+
+Date: Wed May 20 11:59:02 2020
+Total elapsed time: 4.590 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 52231
+traniter = 20624
+tranpoints = 9083
+accept = 7966
+rejected = 1117
+matrix size = 70
+fillins = 97
+solver = Normal
+Thread vector: 17.3/12.8[3] 8.9/5.5[3] 6.7/5.2[3] 0.5/1.8[1]  2592/500
+Matrix Compiler1: 7.01 KB object code size  3.7/2.0/[1.0]
+Matrix Compiler2: 7.34 KB object code size  1.8/2.9/[0.6]
+

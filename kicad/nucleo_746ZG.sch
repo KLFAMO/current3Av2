@@ -1,0 +1,570 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 6
+Title "Compensation coils driver"
+Date "2022-03-22"
+Rev "2.0"
+Comp "UMK (NCU) Toruń"
+Comment1 "KL FAMO"
+Comment2 "design by: mgr inż. Adam Ledziński"
+Comment3 ""
+Comment4 "PL: Zasilacz cewek kompensacyjnych (3x3A)"
+$EndDescr
+$Comp
+L ff:NUCLEO-H743ZI2 M?
+U 3 1 5EBB41D0
+P 2800 1650
+AR Path="/5E8EE823/5EBB41D0" Ref="M?"  Part="3" 
+AR Path="/5E8EE823/5EB59A8C/5EBB41D0" Ref="M1"  Part="3" 
+AR Path="/5EBB41D0" Ref="M1"  Part="3" 
+AR Path="/64132056/64132060/5EBB41D0" Ref="M1"  Part="3" 
+F 0 "M1" H 2800 2520 50  0000 C CNN
+F 1 "NUCLEO-H743ZI2" H 2800 2427 50  0000 C CNN
+F 2 "ff_lib:MODULE_NUCLEO-F746ZG_mini_M" H 2800 1650 50  0001 L BNN
+F 3 "STMicroelectronics" H 2800 1650 50  0001 L BNN
+F 4 "po1:DS1023-2*8S21,DS1023-2*10S21,DS1023-2*16S21,DS1023-2*17S21" H 2800 1650 50  0001 C CNN "Comm"
+	3    2800 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L ff:NUCLEO-H743ZI2 M?
+U 4 1 5EBB41D6
+P 2700 3650
+AR Path="/5E8EE823/5EBB41D6" Ref="M?"  Part="4" 
+AR Path="/5E8EE823/5EB59A8C/5EBB41D6" Ref="M1"  Part="4" 
+AR Path="/5EBB41D6" Ref="M1"  Part="4" 
+AR Path="/64132056/64132060/5EBB41D6" Ref="M1"  Part="4" 
+F 0 "M1" H 2700 4820 50  0000 C CNN
+F 1 "NUCLEO-H743ZI2" H 2700 4727 50  0000 C CNN
+F 2 "ff_lib:MODULE_NUCLEO-F746ZG_mini_M" H 2700 3650 50  0001 L BNN
+F 3 "STMicroelectronics" H 2700 3650 50  0001 L BNN
+F 4 "po1:DS1023-2*8S21,DS1023-2*10S21,DS1023-2*16S21,DS1023-2*17S21" H 2700 3650 50  0001 C CNN "Comm"
+	4    2700 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L ff:NUCLEO-H743ZI2 M?
+U 5 1 64132064
+P 8150 2200
+AR Path="/5E8EE823/64132064" Ref="M?"  Part="5" 
+AR Path="/5E8EE823/5EB59A8C/64132064" Ref="M1"  Part="5" 
+AR Path="/64132064" Ref="M1"  Part="5" 
+AR Path="/64132056/64132060/64132064" Ref="M1"  Part="5" 
+F 0 "M1" H 8150 3170 50  0000 C CNN
+F 1 "NUCLEO-H743ZI2" H 8150 3077 50  0000 C CNN
+F 2 "ff_lib:MODULE_NUCLEO-F746ZG_mini_M" H 8150 2200 50  0001 L BNN
+F 3 "STMicroelectronics" H 8150 2200 50  0001 L BNN
+F 4 "po1:DS1023-2*8S21,DS1023-2*10S21,DS1023-2*16S21,DS1023-2*17S21" H 8150 2200 50  0001 C CNN "Comm"
+	5    8150 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L ff:NUCLEO-H743ZI2 M?
+U 6 1 5EBB41E2
+P 2700 6250
+AR Path="/5E8EE823/5EBB41E2" Ref="M?"  Part="6" 
+AR Path="/5E8EE823/5EB59A8C/5EBB41E2" Ref="M1"  Part="6" 
+AR Path="/5EBB41E2" Ref="M1"  Part="6" 
+AR Path="/64132056/64132060/5EBB41E2" Ref="M1"  Part="6" 
+F 0 "M1" H 2700 7620 50  0000 C CNN
+F 1 "NUCLEO-H743ZI2" H 2700 7527 50  0000 C CNN
+F 2 "ff_lib:MODULE_NUCLEO-F746ZG_mini_M" H 2700 6250 50  0001 L BNN
+F 3 "STMicroelectronics" H 2700 6250 50  0001 L BNN
+F 4 "po1:DS1023-2*8S21,DS1023-2*10S21,DS1023-2*16S21,DS1023-2*17S21" H 2700 6250 50  0001 C CNN "Comm"
+	6    2700 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9650 2000 10150 2000
+Text Label 9750 2000 0    50   ~ 0
+DAC_MOSI
+Text HLabel 6150 2400 0    50   Output ~ 0
+DAC_SCK
+Text HLabel 10150 2000 2    50   Output ~ 0
+DAC_MOSI
+$Comp
+L Device:C C?
+U 1 1 64132067
+P 5450 1500
+AR Path="/64132067" Ref="C?"  Part="1" 
+AR Path="/5E9A8653/64132067" Ref="C?"  Part="1" 
+AR Path="/5E8EE823/5EB59A8C/64132067" Ref="C91"  Part="1" 
+AR Path="/64132056/64132060/64132067" Ref="C91"  Part="1" 
+F 0 "C91" H 5565 1547 50  0000 L CNN
+F 1 "100n 50V X7R" H 5500 1400 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 5488 1350 50  0001 C CNN
+F 3 "~" H 5450 1500 50  0001 C CNN
+	1    5450 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR0151
+U 1 1 64132068
+P 4900 1750
+F 0 "#PWR0151" H 4900 1500 50  0001 C CNN
+F 1 "GNDD" H 4905 1594 50  0000 C CNN
+F 2 "" H 4900 1750 50  0001 C CNN
+F 3 "" H 4900 1750 50  0001 C CNN
+	1    4900 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR0156
+U 1 1 64810BA4
+P 5450 1750
+F 0 "#PWR0156" H 5450 1500 50  0001 C CNN
+F 1 "GNDD" H 5455 1594 50  0000 C CNN
+F 2 "" H 5450 1750 50  0001 C CNN
+F 3 "" H 5450 1750 50  0001 C CNN
+	1    5450 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 1250 4900 1250
+Wire Wire Line
+	4900 1250 4900 1350
+Wire Wire Line
+	4900 1250 5450 1250
+Wire Wire Line
+	5450 1250 5450 1350
+Connection ~ 4900 1250
+Wire Wire Line
+	4900 1750 4900 1650
+$Comp
+L power:GNDD #PWR0149
+U 1 1 64810AFC
+P 4200 2350
+F 0 "#PWR0149" H 4200 2100 50  0001 C CNN
+F 1 "GNDD" H 4205 2194 50  0000 C CNN
+F 2 "" H 4200 2350 50  0001 C CNN
+F 3 "" H 4200 2350 50  0001 C CNN
+	1    4200 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR0146
+U 1 1 64810BA6
+P 4000 4650
+F 0 "#PWR0146" H 4000 4400 50  0001 C CNN
+F 1 "GNDD" H 4005 4494 50  0000 C CNN
+F 2 "" H 4000 4650 50  0001 C CNN
+F 3 "" H 4000 4650 50  0001 C CNN
+	1    4000 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR0147
+U 1 1 6413206D
+P 4000 7450
+F 0 "#PWR0147" H 4000 7200 50  0001 C CNN
+F 1 "GNDD" H 4005 7294 50  0000 C CNN
+F 2 "" H 4000 7450 50  0001 C CNN
+F 3 "" H 4000 7450 50  0001 C CNN
+	1    4000 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR0165
+U 1 1 64810BA8
+P 9750 3000
+F 0 "#PWR0165" H 9750 2750 50  0001 C CNN
+F 1 "GNDD" H 9755 2844 50  0000 C CNN
+F 2 "" H 9750 3000 50  0001 C CNN
+F 3 "" H 9750 3000 50  0001 C CNN
+	1    9750 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9750 3000 9750 2900
+Wire Wire Line
+	9750 2900 9650 2900
+Wire Wire Line
+	4000 7450 4000 7350
+Wire Wire Line
+	4000 7250 3900 7250
+Wire Wire Line
+	3900 7350 4000 7350
+Connection ~ 4000 7350
+Wire Wire Line
+	4000 7350 4000 7250
+Wire Wire Line
+	4000 4650 4000 4550
+Wire Wire Line
+	4000 4550 3900 4550
+$Comp
+L Connector:Micro_SD_Card_Det SD1
+U 1 1 5ED582E9
+P 8800 5000
+F 0 "SD1" H 8750 4180 50  0000 C CNN
+F 1 "DM3D-SF" H 8750 4273 50  0000 C CNN
+F 2 "Connectors_Card:Hirose_DM3D-SF" H 10850 5700 50  0001 C CNN
+F 3 "https://www.hirose.com/product/document?clcode=CL0609-0033-6-00&productname=DM3AT-SF-PEJ2M5&series=DM3&documenttype=Catalog&lang=en&documentid=D49662_en" H 8800 5100 50  0001 C CNN
+	1    8800 5000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GNDD #PWR0163
+U 1 1 64810BB5
+P 7850 4600
+F 0 "#PWR0163" H 7850 4350 50  0001 C CNN
+F 1 "GNDD" H 7855 4444 50  0000 C CNN
+F 2 "" H 7850 4600 50  0001 C CNN
+F 3 "" H 7850 4600 50  0001 C CNN
+	1    7850 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 4500 7850 4500
+Wire Wire Line
+	7850 4500 7850 4600
+$Comp
+L power:GNDD #PWR0164
+U 1 1 64132093
+P 9800 5500
+F 0 "#PWR0164" H 9800 5250 50  0001 C CNN
+F 1 "GNDD" H 9805 5344 50  0000 C CNN
+F 2 "" H 9800 5500 50  0001 C CNN
+F 3 "" H 9800 5500 50  0001 C CNN
+	1    9800 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10250 4800 9700 4800
+Wire Wire Line
+	10250 4700 9700 4700
+Wire Wire Line
+	10250 5400 9700 5400
+Wire Wire Line
+	10250 5300 9700 5300
+Wire Wire Line
+	10250 5000 9700 5000
+Wire Wire Line
+	10250 5200 9700 5200
+Text Label 9900 4800 0    50   ~ 0
+SD_D0
+Text Label 9900 4700 0    50   ~ 0
+SD_D1
+Text Label 9900 5400 0    50   ~ 0
+SD_D2
+Text Label 9900 5300 0    50   ~ 0
+SD_D3
+Text Label 9900 5000 0    50   ~ 0
+SD_CK
+Text Label 9900 5200 0    50   ~ 0
+SD_CMD
+$Comp
+L power:+3V3 #PWR0166
+U 1 1 64810B03
+P 10450 5000
+F 0 "#PWR0166" H 10450 4850 50  0001 C CNN
+F 1 "+3V3" H 10465 5177 50  0000 C CNN
+F 2 "" H 10450 5000 50  0001 C CNN
+F 3 "" H 10450 5000 50  0001 C CNN
+	1    10450 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 5100 10450 5100
+Wire Wire Line
+	10450 5100 10450 5000
+$Comp
+L Device:C C?
+U 1 1 6413209E
+P 10450 5350
+AR Path="/6413209E" Ref="C?"  Part="1" 
+AR Path="/5E9A8653/6413209E" Ref="C?"  Part="1" 
+AR Path="/5E8EE823/5EB59A8C/6413209E" Ref="C93"  Part="1" 
+AR Path="/64132056/64132060/6413209E" Ref="C93"  Part="1" 
+F 0 "C93" H 10565 5397 50  0000 L CNN
+F 1 "100n 50V X7R" H 10500 5250 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 10488 5200 50  0001 C CNN
+F 3 "~" H 10450 5350 50  0001 C CNN
+	1    10450 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 5100 10450 5200
+Connection ~ 10450 5100
+Wire Wire Line
+	10450 5600 10450 5500
+Wire Wire Line
+	9800 5500 9800 4900
+Wire Wire Line
+	9800 4900 9700 4900
+$Comp
+L power:GNDD #PWR0167
+U 1 1 6413209F
+P 10450 5600
+F 0 "#PWR0167" H 10450 5350 50  0001 C CNN
+F 1 "GNDD" H 10455 5444 50  0000 C CNN
+F 2 "" H 10450 5600 50  0001 C CNN
+F 3 "" H 10450 5600 50  0001 C CNN
+	1    10450 5600
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1500 1450
+Wire Wire Line
+	4600 1750 4100 1750
+Wire Wire Line
+	4600 1850 4100 1850
+Wire Wire Line
+	4200 2350 4200 2250
+Wire Wire Line
+	4200 2250 4100 2250
+Text Label 4200 1750 0    50   ~ 0
+SD_DET1
+Text Label 4200 1850 0    50   ~ 0
+SD_DET2
+Wire Wire Line
+	10300 4500 9700 4500
+Wire Wire Line
+	10300 4600 9700 4600
+Text Label 9900 4500 0    50   ~ 0
+SD_DET1
+Text Label 9900 4600 0    50   ~ 0
+SD_DET2
+Wire Wire Line
+	5450 1650 5450 1750
+Text Label 1100 2150 0    50   ~ 0
+SD_CMD
+Text Label 1100 2050 0    50   ~ 0
+SD_CK
+Text Label 1100 1950 0    50   ~ 0
+SD_D3
+Text Label 1100 1850 0    50   ~ 0
+SD_D2
+Text Label 1100 1750 0    50   ~ 0
+SD_D1
+Text Label 1100 1650 0    50   ~ 0
+SD_D0
+Wire Wire Line
+	1500 2150 1000 2150
+Wire Wire Line
+	1500 2050 1000 2050
+Wire Wire Line
+	1500 1950 1000 1950
+Wire Wire Line
+	1500 1850 1000 1850
+Wire Wire Line
+	1500 1750 1000 1750
+Wire Wire Line
+	1500 1650 1000 1650
+Text Label 6250 2400 0    50   ~ 0
+DAC_SCK
+Wire Wire Line
+	6650 2400 6150 2400
+Wire Wire Line
+	1000 2750 1500 2750
+Text Label 1100 2750 0    50   ~ 0
+CUR1
+Text Label 1100 2850 0    50   ~ 0
+CUR2
+Text Label 1100 2950 0    50   ~ 0
+CUR3
+Wire Wire Line
+	1000 2850 1500 2850
+Wire Wire Line
+	1000 2950 1500 2950
+Text HLabel 1000 2750 0    50   Input ~ 0
+CUR1
+Text HLabel 1000 2850 0    50   Input ~ 0
+CUR2
+Text HLabel 1000 2950 0    50   Input ~ 0
+CUR3
+NoConn ~ 4100 1150
+Wire Wire Line
+	10150 2700 9650 2700
+Wire Wire Line
+	6150 2600 6650 2600
+Wire Wire Line
+	4400 5650 3900 5650
+Text Label 9750 2700 0    50   ~ 0
+DIR1
+Text Label 6250 2600 0    50   ~ 0
+DIR2
+Text Label 4000 5650 0    50   ~ 0
+DIR3
+Text HLabel 10150 2700 2    50   Output ~ 0
+DIR1
+Text HLabel 6150 2600 0    50   Output ~ 0
+DIR2
+Text HLabel 4400 5650 2    50   Output ~ 0
+DIR3
+Text HLabel 4400 4350 2    50   Input ~ 0
+TTL1
+Text HLabel 4400 2850 2    50   Input ~ 0
+TTL2
+Text HLabel 1000 4350 0    50   Input ~ 0
+TTL4
+Wire Wire Line
+	3900 4350 4400 4350
+Wire Wire Line
+	3900 2850 4400 2850
+Wire Wire Line
+	1500 4350 1000 4350
+Text Label 4000 4350 0    50   ~ 0
+FIX1
+Text Label 4000 2850 0    50   ~ 0
+FIX2
+Text Label 1100 4350 0    50   ~ 0
+FIX4
+NoConn ~ 9650 1500
+NoConn ~ 3900 2750
+NoConn ~ 1500 3250
+NoConn ~ 1500 4050
+NoConn ~ 3900 3450
+NoConn ~ 3900 3550
+NoConn ~ 3900 3850
+NoConn ~ 3900 4050
+NoConn ~ 3900 4150
+NoConn ~ 3900 4250
+NoConn ~ 3900 5150
+NoConn ~ 1500 5350
+NoConn ~ 1500 5450
+NoConn ~ 1500 5550
+NoConn ~ 3900 6150
+NoConn ~ 3900 6250
+NoConn ~ 3900 6550
+NoConn ~ 3900 6750
+NoConn ~ 3900 6850
+NoConn ~ 3900 6950
+Text Label 6250 2700 0    50   ~ 0
+TXD1
+Wire Wire Line
+	6150 2700 6650 2700
+Text Notes 5700 2450 2    50   ~ 0
+SPI1
+Wire Wire Line
+	4300 950  4300 1250
+Wire Wire Line
+	4300 1450 4100 1450
+$Comp
+L power:+3.3V #PWR0177
+U 1 1 64810BA5
+P 4300 950
+F 0 "#PWR0177" H 4300 800 50  0001 C CNN
+F 1 "+3.3V" H 4315 1127 50  0000 C CNN
+F 2 "" H 4300 950 50  0001 C CNN
+F 3 "" H 4300 950 50  0001 C CNN
+	1    4300 950 
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3900 3650
+NoConn ~ 1500 6150
+NoConn ~ 1500 6250
+NoConn ~ 3900 5350
+Text Notes 10650 2050 0    50   ~ 0
+SPI1
+Text Notes 6500 2800 2    50   ~ 0
+USART6
+Text Notes 10500 2150 2    50   ~ 0
+USART6
+Wire Wire Line
+	9650 2200 10150 2200
+Text Label 9750 2200 0    50   ~ 0
+RXD1
+Wire Wire Line
+	4100 1250 4300 1250
+Connection ~ 4300 1250
+Wire Wire Line
+	4300 1250 4300 1450
+Wire Wire Line
+	3900 2950 4400 2950
+Text Label 4000 2950 0    50   ~ 0
+FOX7
+Text HLabel 4400 2950 2    50   Output ~ 0
+TTL7
+Text HLabel 10150 1700 2    50   Output ~ 0
+TXD2
+Text HLabel 10150 1900 2    50   Input ~ 0
+RXD2
+Wire Wire Line
+	10150 1700 9650 1700
+Wire Wire Line
+	10150 1900 9650 1900
+Text Label 9750 1700 0    50   ~ 0
+TXD2
+Text Label 9750 1900 0    50   ~ 0
+RXD2
+Text HLabel 6150 2700 0    50   Output ~ 0
+TXD1
+Text HLabel 10150 2200 2    50   Input ~ 0
+RXD1
+Wire Wire Line
+	4200 2250 4200 2150
+Wire Wire Line
+	4200 2150 4100 2150
+Connection ~ 4200 2250
+Text HLabel 6150 2300 0    50   Output ~ 0
+LDAC
+Text HLabel 10150 1800 2    50   Output ~ 0
+~SYNC
+Wire Wire Line
+	6150 2100 6650 2100
+Wire Wire Line
+	6150 2200 6650 2200
+Text Label 6250 2100 0    50   ~ 0
+RSTSEL
+Text Label 6250 2200 0    50   ~ 0
+DAC_RST
+Text HLabel 6150 2100 0    50   Output ~ 0
+RSTSEL
+Text HLabel 6150 2200 0    50   Output ~ 0
+DACRST
+Wire Wire Line
+	6150 2300 6650 2300
+Wire Wire Line
+	9650 2500 10150 2500
+Wire Wire Line
+	9650 1800 10150 1800
+Text Label 9750 1800 0    50   ~ 0
+~SYNC
+Text Label 9750 2500 0    50   ~ 0
+~ENABLE
+Text Label 6250 2300 0    50   ~ 0
+LDAC
+Text HLabel 10150 2500 2    50   Output ~ 0
+~ENABLE
+NoConn ~ 1500 6850
+NoConn ~ 1500 6750
+NoConn ~ 1500 6550
+Text Label 4000 5550 0    50   ~ 0
+ES3
+Wire Wire Line
+	3900 5550 4400 5550
+Text HLabel 4400 5550 2    50   BiDi ~ 0
+ES3
+Text HLabel 6150 1800 0    50   BiDi ~ 0
+ES2
+Text HLabel 6150 1700 0    50   BiDi ~ 0
+ES1
+Wire Wire Line
+	6650 1700 6150 1700
+Wire Wire Line
+	6650 1800 6150 1800
+Text Label 6250 1700 0    50   ~ 0
+ES1
+Text Label 6250 1800 0    50   ~ 0
+ES2
+$Comp
+L Device:C C?
+U 1 1 63DB1917
+P 4900 1500
+AR Path="/62B01EDE/63DB1917" Ref="C?"  Part="1" 
+AR Path="/62B020D5/63DB1917" Ref="C?"  Part="1" 
+AR Path="/62B0203A/63DB1917" Ref="C?"  Part="1" 
+AR Path="/6412EC52/62B0203A/63DB1917" Ref="C?"  Part="1" 
+AR Path="/64132056/63DB1917" Ref="C?"  Part="1" 
+AR Path="/64132056/64132060/63DB1917" Ref="C71"  Part="1" 
+F 0 "C71" H 4750 1550 50  0000 R CNN
+F 1 "10u 25V X5R" H 5050 1400 50  0000 R CNN
+F 2 "Capacitors_SMD:C_0603" H 4938 1350 50  0001 C CNN
+F 3 "~" H 4900 1500 50  0001 C CNN
+F 4 "GRM188R61E106KA73D" H 4900 1500 50  0001 C CNN "Comm"
+	1    4900 1500
+	-1   0    0    -1  
+$EndComp
+$EndSCHEMATC
