@@ -89,6 +89,7 @@ void Error_Handler(void);
 #define TTL1_GPIO_Port GPIOE
 #define LD2_Pin GPIO_PIN_1
 #define LD2_GPIO_Port GPIOE
+
 /* USER CODE BEGIN Private defines */
 
 /*Static IP ADDRESS*/
@@ -116,5 +117,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
