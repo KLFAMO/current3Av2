@@ -79,7 +79,6 @@ uint16_t d_in;
 
 */
 double DAC[4][4] = {
-
 		{0.0, 0.0, 0.0, 1.0},
 		{0.0, 0.0, 0.0, 1.0},
 		{0.0, 0.0, 0.0, 1.0},
@@ -484,6 +483,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 
   HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
+  /*
   if(GPIO_Pin==TTL4_Pin)
   {
 	  if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_RESET &&
@@ -518,6 +518,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 //		  SendToDAC(0);
 	  }
   }
+  */
 }
 
 void HAL_SPI_TxCpltCallback (SPI_HandleTypeDef * hspi){
