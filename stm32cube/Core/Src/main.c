@@ -522,10 +522,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 }
 
 void HAL_SPI_TxCpltCallback (SPI_HandleTypeDef * hspi){
-
+/*
 	HAL_GPIO_WritePin(GPIOE, CS1_Pin|CS2_Pin, SET);
 	HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, SET);
 	state = 0;
+*/
 }
 
 void SendToDAC(int r)
