@@ -525,8 +525,9 @@ void HAL_SPI_TxCpltCallback (SPI_HandleTypeDef * hspi){
 /*
 	HAL_GPIO_WritePin(GPIOE, CS1_Pin|CS2_Pin, SET);
 	HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, SET);
-	state = 0;
 */
+	state = 0;
+
 }
 
 void SendToDAC(int r)
@@ -551,8 +552,8 @@ void SendToDAC(int r)
 
 //	HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, RESET);
 //	HAL_GPIO_WritePin(GPIOE, CS1_Pin, RESET);
-	HAL_SPI_Transmit_IT(&hspi4, (uint8_t *)&spi_buf, 3);
-	while(state){}
+//	HAL_SPI_Transmit_IT(&hspi4, (uint8_t *)&spi_buf, 3);
+//	while(state){}
 	// x? this part need for sending correct value in first loop
 
 	dif1 = fabs(DAC[r][0] - DAC[last_r][0])/n;
@@ -598,7 +599,7 @@ void SendToDAC(int r)
 	if(r == 3){
 		n = 1;
 	}
-
+/*
 	t0 = HAL_GetTick();
 	for(int i = 1; i <= n; i++){
 
@@ -678,7 +679,7 @@ void SendToDAC(int r)
 	t = t1 - t0;
 	uart_buf_len = sprintf(uart_bufT, "different time is: %lu ms; NO. steps are: %d\r\n", t, n);
 	HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
-
+*/
 	last_r = r;
 }
 
@@ -691,16 +692,11 @@ void AcceptanceNewClient(int * argument)
 
 	while(1)
 	{
-
 		if(newVal == 3){
-
 			close(conn);
-			uart_buf_len = sprintf(uart_bufT, "finished! \r\n");
-			HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 			osThreadTerminate(NULL);
 //			osThreadSuspend(NULL);
 		}else if(newVal == 2){
-
 			last_r = 3;
 			newVal = 0;
 		}else{
@@ -708,10 +704,7 @@ void AcceptanceNewClient(int * argument)
 			memset(msg, 0, sizeof msg);
 			state = read(conn, (char*)msg, 200);
 			newVal = ExtractMessage(msg);
-			send(conn, (char*)uart_bufT, strlen(uart_bufT), 0);	// we have to use send instead of write for avoiding of crash
-
 			if(state <= 0){
-
 				newVal = 3;
 			}
 		}
@@ -730,13 +723,9 @@ int ExtractMessage(char* msg){
 			temp_dac[a][b] = DAC[a][b];
 		}
 	}
-
 	for(int i = 0; i < strlen(msg); i++){
-
 		if(msg[i] == ':'){
-
 			if(strcmp(temp, "DAC") != 0){
-
 				uart_buf_len = sprintf(uart_bufT, "wrong msg: %s\r\n\n%s\r\n", (char*)temp, (char*)help);
 				HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 				return 0;
@@ -747,68 +736,49 @@ int ExtractMessage(char* msg){
 				j = 0;
 				memset(temp, 0, sizeof temp);
 				while(f1){
-
 					i++;
-
 					if(msg[i] == ' ' || msg[i] == ':' || msg[i] == ';' || i >= strlen(msg)){
-
 						f2 = 1;
-
 						if(strcmp(temp, "000") == 0){
-
 							j = 0;
 							memset(temp, 0, sizeof temp);
-
 							while(f2){
-
 								i++;
-
 								if(msg[i] == ';'){
-
 									temp_dac[0][k] = atof(temp);
 									k++;
 									j = 0;
 									memset(temp, 0, sizeof temp);
 								}else if(i >= strlen(msg)){
-
 									if(k == 3){
-
 										temp_dac[0][k] = atof(temp);
 										k++;
 										j = 0;
 										memset(temp, 0, sizeof temp);
 									}else{
-
 										uart_buf_len = sprintf(uart_bufT, "the format is wrong: %s\r\n\n%s\r\n", (char*)temp, (char*)help);
 										HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 										return 0;
 									}
 								}else{
-
 									temp[j] = msg[i];
 									j++;
 									continue;
 								}
 								if(k > 3){
-
 									f2 = 0;
 									f3 = 1;
 									k = 0;
-
 									for(int m = 0; m < 4; m++){
 										DAC[0][m] = temp_dac[0][m];
 									}
 								}
 							}
 						}else if(strcmp(temp, "001") == 0){
-
 							j = 0;
 							memset(temp, 0, sizeof temp);
-
 							while(f2){
-
 								i++;
-
 								if(msg[i] == ';'){
 
 									temp_dac[1][k] = atof(temp);
@@ -830,13 +800,11 @@ int ExtractMessage(char* msg){
 										return 0;
 									}
 								}else{
-
 									temp[j] = msg[i];
 									j++;
 									continue;
 								}
 								if(k > 3){
-
 									f2 = 0;
 									f3 = 1;
 									k = 0;
@@ -984,7 +952,7 @@ void StartThread(void const * argument)
   err = bind(sock, (struct sockaddr *)&address, sizeof (address));
   err = listen(sock, 0);
 
-  SendToDAC(3);
+//  SendToDAC(3);
 
   // create the acceptance thread
   osThreadDef(Acceptance, AcceptanceNewClient, osPriorityLow, 0, configMINIMAL_STACK_SIZE *2);
@@ -993,13 +961,10 @@ void StartThread(void const * argument)
   for(;;)
   {
 		g =  accept(sock, NULL, NULL);
-
 		if(g < 0){
-
 			osDelay(100);
 			continue;
 		}
-
 		ClientHandle = osThreadCreate(osThread(Acceptance), &g);
 //		osThreadTerminate(ClientHandle);
 
@@ -1008,7 +973,6 @@ void StartThread(void const * argument)
 		HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 		write(g, (char*)uart_bufT, strlen(uart_bufT));
 		HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);
-
 		osDelay(100);
   }
   /* USER CODE END 5 */
