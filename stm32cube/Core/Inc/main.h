@@ -58,8 +58,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define TTL3_Pin GPIO_PIN_2
-#define TTL3_GPIO_Port GPIOE
 #define CS1_Pin GPIO_PIN_4
 #define CS1_GPIO_Port GPIOE
 #define CS2_Pin GPIO_PIN_5
@@ -74,19 +72,6 @@ void Error_Handler(void);
 #define STLINK_RX_GPIO_Port GPIOD
 #define STLINK_TX_Pin GPIO_PIN_9
 #define STLINK_TX_GPIO_Port GPIOD
-#define TTL2_Pin GPIO_PIN_0
-#define TTL2_GPIO_Port GPIOD
-#define TTL4_Pin GPIO_PIN_1
-#define TTL4_GPIO_Port GPIOD
-#define TTL4_EXTI_IRQn EXTI1_IRQn
-#define DIR1_Pin GPIO_PIN_7
-#define DIR1_GPIO_Port GPIOD
-#define DIR3_Pin GPIO_PIN_8
-#define DIR3_GPIO_Port GPIOB
-#define DIR2_Pin GPIO_PIN_9
-#define DIR2_GPIO_Port GPIOB
-#define TTL1_Pin GPIO_PIN_0
-#define TTL1_GPIO_Port GPIOE
 #define LD2_Pin GPIO_PIN_1
 #define LD2_GPIO_Port GPIOE
 

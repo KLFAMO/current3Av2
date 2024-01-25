@@ -179,12 +179,12 @@ int main(void)
   HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, SET);
 
   // DIR SET means: positive and DIR RESET means: negative
-  HAL_GPIO_WritePin(GPIOB, DIR3_Pin|DIR2_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(DIR1_GPIO_Port, DIR1_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(GPIOB, DIR3_Pin|DIR2_Pin, GPIO_PIN_SET);
+//  HAL_GPIO_WritePin(DIR1_GPIO_Port, DIR1_Pin, GPIO_PIN_SET);
 
   // star communication by UART
-  uart_buf_len = sprintf(uart_bufT, "Ethernet Communication with DAC\r\n");
-  HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
+//  uart_buf_len = sprintf(uart_bufT, "Ethernet Communication with DAC\r\n");
+//  HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 
   /* USER CODE END 2 */
 
@@ -410,16 +410,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|DIR3_Pin|DIR2_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(DIR1_GPIO_Port, DIR1_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pins : TTL3_Pin TTL1_Pin */
-  GPIO_InitStruct.Pin = TTL3_Pin|TTL1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+  HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : CS1_Pin CS2_Pin LD2_Pin */
   GPIO_InitStruct.Pin = CS1_Pin|CS2_Pin|LD2_Pin;
@@ -441,36 +432,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(CS3_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LD1_Pin LD3_Pin DIR3_Pin DIR2_Pin */
-  GPIO_InitStruct.Pin = LD1_Pin|LD3_Pin|DIR3_Pin|DIR2_Pin;
+  /*Configure GPIO pins : LD1_Pin LD3_Pin */
+  GPIO_InitStruct.Pin = LD1_Pin|LD3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : TTL2_Pin */
-  GPIO_InitStruct.Pin = TTL2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(TTL2_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : TTL4_Pin */
-  GPIO_InitStruct.Pin = TTL4_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(TTL4_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : DIR1_Pin */
-  GPIO_InitStruct.Pin = DIR1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  HAL_GPIO_Init(DIR1_GPIO_Port, &GPIO_InitStruct);
-
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI1_IRQn, 7, 0);
-  HAL_NVIC_EnableIRQ(EXTI1_IRQn);
-
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 7, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
