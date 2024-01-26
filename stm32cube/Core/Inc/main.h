@@ -58,14 +58,26 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define SYNC_Pin GPIO_PIN_4
+#define SYNC_GPIO_Port GPIOA
+#define DAC_SCK_Pin GPIO_PIN_5
+#define DAC_SCK_GPIO_Port GPIOA
+#define LDAC_Pin GPIO_PIN_6
+#define LDAC_GPIO_Port GPIOA
 #define LD1_Pin GPIO_PIN_0
 #define LD1_GPIO_Port GPIOB
+#define ENABLE_Pin GPIO_PIN_12
+#define ENABLE_GPIO_Port GPIOB
 #define LD3_Pin GPIO_PIN_14
 #define LD3_GPIO_Port GPIOB
 #define STLINK_RX_Pin GPIO_PIN_8
 #define STLINK_RX_GPIO_Port GPIOD
 #define STLINK_TX_Pin GPIO_PIN_9
 #define STLINK_TX_GPIO_Port GPIOD
+#define RSTSEL_Pin GPIO_PIN_14
+#define RSTSEL_GPIO_Port GPIOD
+#define DAC_MOSI_Pin GPIO_PIN_5
+#define DAC_MOSI_GPIO_Port GPIOB
 #define LD2_Pin GPIO_PIN_1
 #define LD2_GPIO_Port GPIOE
 
