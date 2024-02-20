@@ -124,6 +124,7 @@ void StartThread(void const * argument);
 
 /* USER CODE BEGIN PFP */
 void AcceptanceNewClient(int * argument);
+void SendSpiMesToDac(uint32_t);
 void SendToDAC(int r);
 int ExtractMessage(char* msg);
 /* USER CODE END PFP */
@@ -174,6 +175,25 @@ int main(void)
   MX_USART3_UART_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+
+//  HAL_GPIO_WritePin(SYNC_GPIO_Port, SYNC_Pin, GPIO_PIN_SET);
+//  HAL_Delay(1);
+//  HAL_GPIO_WritePin(SYNC_GPIO_Port, SYNC_Pin, GPIO_PIN_RESET);
+
+
+  // Reset select.
+  // If RSTSEL is low, input coding is binary;
+  // if high = 2's complement
+  HAL_GPIO_WritePin(RSTSEL_GPIO_Port, RSTSEL_Pin, GPIO_PIN_RESET);
+
+  // SYNC, DATA, CLOCK
+  SendSpiMesToDac(0b000000000011111111111111);
+
+// LDAC load DACs, rising edge triggered loads all DAC register
+  HAL_GPIO_WritePin(LDAC_GPIO_Port, LDAC_Pin, GPIO_PIN_RESET);
+  HAL_Delay(0.001);
+  HAL_GPIO_WritePin(LDAC_GPIO_Port, LDAC_Pin, GPIO_PIN_SET);
+
 
 //  HAL_GPIO_WritePin(GPIOE, CS1_Pin|CS2_Pin, SET);
 //  HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, SET);
@@ -309,7 +329,7 @@ static void MX_SPI1_Init(void)
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi1.Init.NSS = SPI_NSS_HARD_OUTPUT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -516,6 +536,18 @@ void HAL_SPI_TxCpltCallback (SPI_HandleTypeDef * hspi){
 
 }
 */
+
+void SendSpiMesToDac(uint32_t message){
+	HAL_StatusTypeDef status;
+	uint8_t dataToSend[3] = {
+			(message >> 0) & 0xFF,
+	        (message >> 8) & 0xFF,
+	        (message >> 16)& 0xFF
+	};
+	status = HAL_SPI_Transmit(&hspi1, dataToSend, 1, 100);
+	if (status != HAL_OK) {
+	}
+}
 
 void SendToDAC(int r)
 {
