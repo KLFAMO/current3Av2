@@ -125,6 +125,7 @@ void StartThread(void const * argument);
 /* USER CODE BEGIN PFP */
 void AcceptanceNewClient(int * argument);
 void SendSpiMesToDac(uint32_t);
+void SetDAC(uint8_t channel, uint16_t value);
 void SendToDAC(int r);
 int ExtractMessage(char* msg);
 /* USER CODE END PFP */
@@ -176,24 +177,15 @@ int main(void)
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
 
-//  HAL_GPIO_WritePin(SYNC_GPIO_Port, SYNC_Pin, GPIO_PIN_SET);
-//  HAL_Delay(1);
-//  HAL_GPIO_WritePin(SYNC_GPIO_Port, SYNC_Pin, GPIO_PIN_RESET);
-
-
-  // Reset select.
+  // DAC - Reset select.
   // If RSTSEL is low, input coding is binary;
   // if high = 2's complement
   HAL_GPIO_WritePin(RSTSEL_GPIO_Port, RSTSEL_Pin, GPIO_PIN_RESET);
 
-  // SYNC, DATA, CLOCK
-  SendSpiMesToDac(0b000000000011111111111111);
-
-// LDAC load DACs, rising edge triggered loads all DAC register
-  HAL_GPIO_WritePin(LDAC_GPIO_Port, LDAC_Pin, GPIO_PIN_RESET);
-  HAL_Delay(0.001);
-  HAL_GPIO_WritePin(LDAC_GPIO_Port, LDAC_Pin, GPIO_PIN_SET);
-
+  SetDAC(0, 30000);
+  SetDAC(1, 30000);
+  SetDAC(2, 30000);
+  SetDAC(3, 0);
 
 //  HAL_GPIO_WritePin(GPIOE, CS1_Pin|CS2_Pin, SET);
 //  HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, SET);
@@ -327,7 +319,7 @@ static void MX_SPI1_Init(void)
   hspi1.Init.Direction = SPI_DIRECTION_2LINES_TXONLY;
   hspi1.Init.DataSize = SPI_DATASIZE_24BIT;
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+  hspi1.Init.CLKPhase = SPI_PHASE_2EDGE;
   hspi1.Init.NSS = SPI_NSS_HARD_OUTPUT;
   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
@@ -547,6 +539,17 @@ void SendSpiMesToDac(uint32_t message){
 	status = HAL_SPI_Transmit(&hspi1, dataToSend, 1, 100);
 	if (status != HAL_OK) {
 	}
+}
+
+void SetDAC(uint8_t channel, uint16_t value){
+	uint32_t message = 0x00000000;
+	message = message | (value & 0xFFFF);
+	message = message | (((uint32_t)channel & 0b11) << 17);
+	SendSpiMesToDac(message);
+
+	// LDAC load DACs, rising edge triggered loads all DAC register
+	HAL_GPIO_WritePin(LDAC_GPIO_Port, LDAC_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LDAC_GPIO_Port, LDAC_Pin, GPIO_PIN_RESET);
 }
 
 void SendToDAC(int r)
