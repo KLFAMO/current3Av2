@@ -502,42 +502,46 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 
   HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
-  /*
-  if(GPIO_Pin==TTL4_Pin)
+  if(GPIO_Pin==TTL3_Pin)
   {
 	  if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_RESET &&
-		 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_RESET &&
-		 HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET){
+		 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_RESET
+		 //&& HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET
+		 ){
 
 		  // state 1 row 0 in the DAC's array
 		  if(last_r != 0){
-			  SendToDAC(0);
+			  ;
+	//		  SendToDAC(0);
 		  }
 	  }else if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_SET &&
-				 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_RESET &&
-				 HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET){
+				 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_RESET
+				 //&& HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET
+				 ){
 
 		  // state 2 row 1 in the DAC's array
 		  if(last_r != 1){
-			  SendToDAC(1);
+			  ;
+	//		  SendToDAC(1);
 		  }
 	  }else if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_RESET &&
-				 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_SET &&
-				 HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET){
+				 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_SET
+				 // && HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET
+				 ){
 
 		  // state 3 row 2 in the DAC's array
 		  if(last_r != 2){
-			  SendToDAC(2);
+			  ;
+	//		  SendToDAC(2);
 		  }
 	  }else{
-
-		  uart_buf_len = sprintf(uart_bufT, "nothing to send!\r\n");
-		  HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
+		  ;
+		  // uart_buf_len = sprintf(uart_bufT, "nothing to send!\r\n");
+		  // HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 
 //		  SendToDAC(0);
 	  }
   }
-  */
 }
 
 /*
