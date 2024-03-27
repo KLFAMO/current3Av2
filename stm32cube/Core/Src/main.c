@@ -500,6 +500,11 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+	/*
+	 * In new board version, there are only 3 input TTLs.
+	 * TTL1, TTL2 are used to set state
+	 * TTL3 is used to trigger state change
+	 */
 
   HAL_GPIO_TogglePin(GPIOB, LD1_Pin);
   if(GPIO_Pin==TTL3_Pin)
@@ -556,6 +561,9 @@ void HAL_SPI_TxCpltCallback (SPI_HandleTypeDef * hspi){
 */
 
 void SendSpiMesToDac(uint32_t message){
+	/*
+	 * New function for new DAC converter on version 2 of board
+	 */
 	HAL_StatusTypeDef status;
 	uint8_t dataToSend[3] = {
 			(message >> 0) & 0xFF,
@@ -568,6 +576,9 @@ void SendSpiMesToDac(uint32_t message){
 }
 
 void SetDAC(uint8_t channel, uint16_t value){
+	/*
+	 * New function for new DAC converter on version 2 of board
+	 */
 	uint32_t message = 0x00000000;
 	message = message | (value & 0xFFFF);
 	message = message | (((uint32_t)channel & 0b11) << 17);
@@ -579,6 +590,9 @@ void SetDAC(uint8_t channel, uint16_t value){
 }
 
 void SendToDAC(int r)
+/*
+ * r - state number (0-2) (depends on TTLs state)
+ */
 {
 	uint32_t t0, t1, t;
 	if(DAC[r][3] < 1){
@@ -586,14 +600,16 @@ void SendToDAC(int r)
 	}
 
 	int n = round(DAC[r][3]*58);	// 58 to apply values to DAC
-//	int n_delay;
-//	double dif_lim = 0.01;
+	int n_delay;
+	double dif_lim = 0.01;
 	double dif1, dif2, dif3;// max_dif, t_delay;
 //	uint16_t cs[2] = {CS1_Pin, CS2_Pin};
 
 	// x? this part need for sending correct value in first loop
 	state = 1;
 	d_in = abs(round(((DAC[0][0])/v_ref) * max_dec));
+
+	/*******************************
 	spi_buf[0] = 0x00;
 	spi_buf[1] = ((uint8_t*)&d_in)[1];
 	spi_buf[2] = ((uint8_t*)&d_in)[0];
@@ -601,48 +617,56 @@ void SendToDAC(int r)
 //	HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, RESET);
 //	HAL_GPIO_WritePin(GPIOE, CS1_Pin, RESET);
 //	HAL_SPI_Transmit_IT(&hspi4, (uint8_t *)&spi_buf, 3);
+
 //	while(state){}
+ * *****************************************
+ * changed to \|/ */
+	SetDAC(0, d_in);
+	SetDAC(1, d_in);
+	SetDAC(2, d_in);
+	/*        /|\   */
+
 	// x? this part need for sending correct value in first loop
 
 	dif1 = fabs(DAC[r][0] - DAC[last_r][0])/n;
 	dif2 = fabs(DAC[r][1] - DAC[last_r][1])/n;
 	dif3 = fabs(DAC[r][2] - DAC[last_r][2])/n;
 
-//	max_dif = dif1;
-//	max_dif = MAX(max_dif, dif2);
-//	max_dif = MAX(max_dif, dif3);
-//
-//	if(dif1 > dif_lim){
-//
-//		dif1 = dif_lim;
-//		if(dif1 == max_dif){
-//
-//			n = round(fabs(DAC[r][0] - DAC[last_r][0])/dif1);
-//		}
-//	}
-//	if(dif2 > dif_lim){
-//		dif2 = dif_lim;
-//		if(dif2 == max_dif){
-//
-//			n = round(fabs(DAC[r][1] - DAC[last_r][1])/dif2);
-//		}
-//	}
-//	if(dif3 > dif_lim){
-//		dif3 = dif_lim;
-//		if(dif3 == max_dif){
-//
-//			n = round(fabs(DAC[r][2] - DAC[last_r][2])/dif3);
-//		}
-//	}
+	max_dif = dif1;
+	max_dif = MAX(max_dif, dif2);
+	max_dif = MAX(max_dif, dif3);
+
+	if(dif1 > dif_lim){
+
+		dif1 = dif_lim;
+		if(dif1 == max_dif){
+
+			n = round(fabs(DAC[r][0] - DAC[last_r][0])/dif1);
+		}
+	}
+	if(dif2 > dif_lim){
+		dif2 = dif_lim;
+		if(dif2 == max_dif){
+
+			n = round(fabs(DAC[r][1] - DAC[last_r][1])/dif2);
+		}
+	}
+	if(dif3 > dif_lim){
+		dif3 = dif_lim;
+		if(dif3 == max_dif){
+
+			n = round(fabs(DAC[r][2] - DAC[last_r][2])/dif3);
+		}
+	}
 
 	DAC[3][0] = DAC[last_r][0];
 	DAC[3][1] = DAC[last_r][1];
 	DAC[3][2] = DAC[last_r][2];
 
-//	t_delay = (DAC[r][3]*1000)/n;	// microsecond [us]
-//	t_delay = (1*1000)/n;
-//	n_delay = t_delay * 1;		// each 67 step in for equal to 1 us
-//	n_delay = 1;
+	t_delay = (DAC[r][3]*1000)/n;	// microsecond [us]
+	t_delay = (1*1000)/n;
+	n_delay = t_delay * 1;		// each 67 step in for equal to 1 us
+	n_delay = 1;
 
 	if(r == 3){
 		n = 1;
