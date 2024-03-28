@@ -79,9 +79,9 @@ uint16_t d_in;
 
 */
 double DAC[4][4] = {
-		{0.0, 0.0, 0.0, 1.0},
-		{0.0, 0.0, 0.0, 1.0},
-		{0.0, 0.0, 0.0, 1.0},
+		{1.0, 1.0, 1.0, 1.0},
+		{2.0, 2.0, 2.0, 1.0},
+		{3.0, 3.0, 3.0, 1.0},
 		{0.0, 0.0, 0.0, 1.0}
 };
 const double v_ref = 3.0;
@@ -182,8 +182,8 @@ int main(void)
   // if high = 2's complement
   HAL_GPIO_WritePin(RSTSEL_GPIO_Port, RSTSEL_Pin, GPIO_PIN_RESET);
 
-  SetDAC(0, 0);
-  SetDAC(1, 0);
+  SetDAC(0, 60000);
+  SetDAC(1, 30000);
   SetDAC(2, 0);
   SetDAC(3, 0);
 
@@ -517,7 +517,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		  // state 1 row 0 in the DAC's array
 		  if(last_r != 0){
 			  ;
-	//		  SendToDAC(0);
+			  SendToDAC(0);
 		  }
 	  }else if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_SET &&
 				 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_RESET
@@ -527,7 +527,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		  // state 2 row 1 in the DAC's array
 		  if(last_r != 1){
 			  ;
-	//		  SendToDAC(1);
+			  SendToDAC(1);
 		  }
 	  }else if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_RESET &&
 				 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_SET
@@ -537,14 +537,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		  // state 3 row 2 in the DAC's array
 		  if(last_r != 2){
 			  ;
-	//		  SendToDAC(2);
+			  SendToDAC(2);
 		  }
 	  }else{
 		  ;
 		  // uart_buf_len = sprintf(uart_bufT, "nothing to send!\r\n");
 		  // HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 
-//		  SendToDAC(0);
+		  SendToDAC(0);
 	  }
   }
 }
