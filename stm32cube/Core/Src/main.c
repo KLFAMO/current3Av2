@@ -182,9 +182,9 @@ int main(void)
   // if high = 2's complement
   HAL_GPIO_WritePin(RSTSEL_GPIO_Port, RSTSEL_Pin, GPIO_PIN_RESET);
 
-  SetDAC(0, 30000);
-  SetDAC(1, 30000);
-  SetDAC(2, 30000);
+  SetDAC(0, 0);
+  SetDAC(1, 0);
+  SetDAC(2, 0);
   SetDAC(3, 0);
 
 //  HAL_GPIO_WritePin(GPIOE, CS1_Pin|CS2_Pin, SET);
@@ -589,7 +589,7 @@ void SetDAC(uint8_t channel, uint16_t value){
 	HAL_GPIO_WritePin(LDAC_GPIO_Port, LDAC_Pin, GPIO_PIN_RESET);
 }
 
-void SendToDAC(int r)
+void SendToDAC(int r)  // original Mehrdad's function
 /*
  * r - state number (0-2) (depends on TTLs state)
  */
@@ -600,8 +600,8 @@ void SendToDAC(int r)
 	}
 
 	int n = round(DAC[r][3]*58);	// 58 to apply values to DAC
-	int n_delay;
-	double dif_lim = 0.01;
+//	int n_delay;
+//	double dif_lim = 0.01;
 	double dif1, dif2, dif3;// max_dif, t_delay;
 //	uint16_t cs[2] = {CS1_Pin, CS2_Pin};
 
@@ -632,41 +632,41 @@ void SendToDAC(int r)
 	dif2 = fabs(DAC[r][1] - DAC[last_r][1])/n;
 	dif3 = fabs(DAC[r][2] - DAC[last_r][2])/n;
 
-	max_dif = dif1;
-	max_dif = MAX(max_dif, dif2);
-	max_dif = MAX(max_dif, dif3);
-
-	if(dif1 > dif_lim){
-
-		dif1 = dif_lim;
-		if(dif1 == max_dif){
-
-			n = round(fabs(DAC[r][0] - DAC[last_r][0])/dif1);
-		}
-	}
-	if(dif2 > dif_lim){
-		dif2 = dif_lim;
-		if(dif2 == max_dif){
-
-			n = round(fabs(DAC[r][1] - DAC[last_r][1])/dif2);
-		}
-	}
-	if(dif3 > dif_lim){
-		dif3 = dif_lim;
-		if(dif3 == max_dif){
-
-			n = round(fabs(DAC[r][2] - DAC[last_r][2])/dif3);
-		}
-	}
+//	max_dif = dif1;
+//	max_dif = MAX(max_dif, dif2);
+//	max_dif = MAX(max_dif, dif3);
+//
+//	if(dif1 > dif_lim){
+//
+//		dif1 = dif_lim;
+//		if(dif1 == max_dif){
+//
+//			n = round(fabs(DAC[r][0] - DAC[last_r][0])/dif1);
+//		}
+//	}
+//	if(dif2 > dif_lim){
+//		dif2 = dif_lim;
+//		if(dif2 == max_dif){
+//
+//			n = round(fabs(DAC[r][1] - DAC[last_r][1])/dif2);
+//		}
+//	}
+//	if(dif3 > dif_lim){
+//		dif3 = dif_lim;
+//		if(dif3 == max_dif){
+//
+//			n = round(fabs(DAC[r][2] - DAC[last_r][2])/dif3);
+//		}
+//	}
 
 	DAC[3][0] = DAC[last_r][0];
 	DAC[3][1] = DAC[last_r][1];
 	DAC[3][2] = DAC[last_r][2];
 
-	t_delay = (DAC[r][3]*1000)/n;	// microsecond [us]
-	t_delay = (1*1000)/n;
-	n_delay = t_delay * 1;		// each 67 step in for equal to 1 us
-	n_delay = 1;
+//	t_delay = (DAC[r][3]*1000)/n;	// microsecond [us]
+//	t_delay = (1*1000)/n;
+//	n_delay = t_delay * 1;		// each 67 step in for equal to 1 us
+//	n_delay = 1;
 
 	if(r == 3){
 		n = 1;
