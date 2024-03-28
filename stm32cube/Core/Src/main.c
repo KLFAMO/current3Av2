@@ -671,7 +671,7 @@ void SendToDAC(int r)  // original Mehrdad's function
 	if(r == 3){
 		n = 1;
 	}
-/*
+
 	t0 = HAL_GetTick();
 	for(int i = 1; i <= n; i++){
 
@@ -728,19 +728,21 @@ void SendToDAC(int r)  // original Mehrdad's function
 				  d_in = abs(round((DAC[3][j]/v_ref) * max_dec));
 			  }
 
-			  spi_buf[0] = 0x00;
-			  spi_buf[1] = ((uint8_t*)&d_in)[1];
-			  spi_buf[2] = ((uint8_t*)&d_in)[0];
-			  // send value to DAC
-			  if(j == 2){
-				  HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, RESET);
-
-			  }else{
-				  HAL_GPIO_WritePin(GPIOE, cs[j], RESET);
-			  }
-			  HAL_SPI_Transmit_IT(&hspi4, (uint8_t *)&spi_buf, 3);
-
-			  while(state){}
+			  SetDAC(j, d_in);
+//
+//			  spi_buf[0] = 0x00;
+//			  spi_buf[1] = ((uint8_t*)&d_in)[1];
+//			  spi_buf[2] = ((uint8_t*)&d_in)[0];
+//			  // send value to DAC
+//			  if(j == 2){
+//				  HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, RESET);
+//
+//			  }else{
+//				  HAL_GPIO_WritePin(GPIOE, cs[j], RESET);
+//			  }
+//			  HAL_SPI_Transmit_IT(&hspi4, (uint8_t *)&spi_buf, 3);
+//
+//			  while(state){}
 		}
 
 		// make delay in us
@@ -749,9 +751,9 @@ void SendToDAC(int r)  // original Mehrdad's function
 
 	t1 = HAL_GetTick();
 	t = t1 - t0;
-	uart_buf_len = sprintf(uart_bufT, "different time is: %lu ms; NO. steps are: %d\r\n", t, n);
-	HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
-*/
+//	uart_buf_len = sprintf(uart_bufT, "different time is: %lu ms; NO. steps are: %d\r\n", t, n);
+//	HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
+
 	last_r = r;
 }
 
