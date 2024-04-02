@@ -79,9 +79,9 @@ uint16_t d_in;
 
 */
 double DAC[4][4] = {
-		{1.0, 1.0, 1.0, 1.0},
-		{2.0, 2.0, 2.0, 1.0},
-		{3.0, 3.0, 3.0, 1.0},
+		{0.0, 0.0, 0.0, 1.0},
+		{0.1, 0.1, 0.1, 1.0},
+		{-0.1, -0.1, -0.1, 1.0},
 		{0.0, 0.0, 0.0, 1.0}
 };
 const double v_ref = 3.0;
@@ -182,8 +182,8 @@ int main(void)
   // if high = 2's complement
   HAL_GPIO_WritePin(RSTSEL_GPIO_Port, RSTSEL_Pin, GPIO_PIN_RESET);
 
-  SetDAC(0, 60000);
-  SetDAC(1, 30000);
+  SetDAC(0, 0);
+  SetDAC(1, 0);
   SetDAC(2, 0);
   SetDAC(3, 0);
 
@@ -429,11 +429,17 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(RSTSEL_GPIO_Port, RSTSEL_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : TTL1_Pin TTL3_Pin */
-  GPIO_InitStruct.Pin = TTL1_Pin|TTL3_Pin;
+  /*Configure GPIO pin : TTL1_Pin */
+  GPIO_InitStruct.Pin = TTL1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+  HAL_GPIO_Init(TTL1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : TTL3_Pin */
+  GPIO_InitStruct.Pin = TTL3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(TTL3_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
@@ -490,6 +496,9 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 7, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
@@ -511,40 +520,25 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   {
 	  if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_RESET &&
 		 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_RESET
-		 //&& HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET
-		 ){
-
+	  ){
 		  // state 1 row 0 in the DAC's array
 		  if(last_r != 0){
-			  ;
 			  SendToDAC(0);
 		  }
 	  }else if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_SET &&
-				 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_RESET
-				 //&& HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET
-				 ){
-
+			  HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_RESET
+	  ){
 		  // state 2 row 1 in the DAC's array
 		  if(last_r != 1){
-			  ;
 			  SendToDAC(1);
 		  }
 	  }else if(HAL_GPIO_ReadPin(GPIOE, TTL1_Pin) == GPIO_PIN_RESET &&
 				 HAL_GPIO_ReadPin(TTL2_GPIO_Port, TTL2_Pin) == GPIO_PIN_SET
-				 // && HAL_GPIO_ReadPin(GPIOE, TTL3_Pin) == GPIO_PIN_RESET
 				 ){
-
 		  // state 3 row 2 in the DAC's array
 		  if(last_r != 2){
-			  ;
 			  SendToDAC(2);
 		  }
-	  }else{
-		  ;
-		  // uart_buf_len = sprintf(uart_bufT, "nothing to send!\r\n");
-		  // HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
-
-		  SendToDAC(0);
 	  }
   }
 }
@@ -591,7 +585,7 @@ void SetDAC(uint8_t channel, uint16_t value){
 
 void SendToDAC(int r)  // original Mehrdad's function
 /*
- * r - state number (0-2) (depends on TTLs state)
+ * r - state number (0-3) (depends on TTLs state)
  */
 {
 	uint32_t t0, t1, t;
@@ -606,8 +600,8 @@ void SendToDAC(int r)  // original Mehrdad's function
 //	uint16_t cs[2] = {CS1_Pin, CS2_Pin};
 
 	// x? this part need for sending correct value in first loop
-	state = 1;
-	d_in = abs(round(((DAC[0][0])/v_ref) * max_dec));
+	// state = 1;
+//	d_in = abs(round(((DAC[0][0])/v_ref) * max_dec));
 
 	/*******************************
 	spi_buf[0] = 0x00;
@@ -621,9 +615,9 @@ void SendToDAC(int r)  // original Mehrdad's function
 //	while(state){}
  * *****************************************
  * changed to \|/ */
-	SetDAC(0, d_in);
-	SetDAC(1, d_in);
-	SetDAC(2, d_in);
+//	SetDAC(0, d_in);
+//	SetDAC(1, d_in);
+//	SetDAC(2, d_in);
 	/*        /|\   */
 
 	// x? this part need for sending correct value in first loop
@@ -696,35 +690,32 @@ void SendToDAC(int r)  // original Mehrdad's function
 			  state = 1;
 
 			  switch(j){
-
-			  case 0:
-				  if(DAC[3][j] >= 0){
-					  HAL_GPIO_WritePin(DIR1_GPIO_Port, DIR1_Pin, GPIO_PIN_SET);
-				  }else{
-					  HAL_GPIO_WritePin(DIR1_GPIO_Port, DIR1_Pin, GPIO_PIN_RESET);
-				  }
-				  break;
-			  case 1:
-				  if(DAC[3][j] >= 0){
-					  HAL_GPIO_WritePin(GPIOB, DIR2_Pin, GPIO_PIN_SET);
-				  }else{
-					  HAL_GPIO_WritePin(GPIOB, DIR2_Pin, GPIO_PIN_RESET);
-				  }
-				  break;
-			  case 2:
-				  if(DAC[3][j] >= 0){
-					  HAL_GPIO_WritePin(GPIOB, DIR3_Pin, GPIO_PIN_SET);
-				  }else{
-					  HAL_GPIO_WritePin(GPIOB, DIR3_Pin, GPIO_PIN_RESET);
-				  }
-				  break;
+				  case 0:
+					  if(DAC[3][j] >= 0){
+						  HAL_GPIO_WritePin(DIR1_GPIO_Port, DIR1_Pin, GPIO_PIN_SET);
+					  }else{
+						  HAL_GPIO_WritePin(DIR1_GPIO_Port, DIR1_Pin, GPIO_PIN_RESET);
+					  }
+					  break;
+				  case 1:
+					  if(DAC[3][j] >= 0){
+						  HAL_GPIO_WritePin(GPIOB, DIR2_Pin, GPIO_PIN_SET);
+					  }else{
+						  HAL_GPIO_WritePin(GPIOB, DIR2_Pin, GPIO_PIN_RESET);
+					  }
+					  break;
+				  case 2:
+					  if(DAC[3][j] >= 0){
+						  HAL_GPIO_WritePin(GPIOB, DIR3_Pin, GPIO_PIN_SET);
+					  }else{
+						  HAL_GPIO_WritePin(GPIOB, DIR3_Pin, GPIO_PIN_RESET);
+					  }
+					  break;
 			  }
 
-			  if(fabs(DAC[3][j]) == v_ref){
-
+			  if(fabs(DAC[3][j]) > v_ref){
 				  d_in = 0xffff;
 			  }else{
-
 				  d_in = abs(round((DAC[3][j]/v_ref) * max_dec));
 			  }
 

@@ -62,6 +62,7 @@ void Error_Handler(void);
 #define TTL1_GPIO_Port GPIOE
 #define TTL3_Pin GPIO_PIN_6
 #define TTL3_GPIO_Port GPIOE
+#define TTL3_EXTI_IRQn EXTI9_5_IRQn
 #define TTL2_Pin GPIO_PIN_1
 #define TTL2_GPIO_Port GPIOF
 #define SYNC_Pin GPIO_PIN_4
