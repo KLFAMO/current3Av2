@@ -699,16 +699,16 @@ void SendToDAC(int r)  // original Mehrdad's function
 					  break;
 				  case 1:
 					  if(DAC[3][j] >= 0){
-						  HAL_GPIO_WritePin(GPIOB, DIR2_Pin, GPIO_PIN_SET);
+						  HAL_GPIO_WritePin(DIR2_GPIO_Port, DIR2_Pin, GPIO_PIN_SET);
 					  }else{
-						  HAL_GPIO_WritePin(GPIOB, DIR2_Pin, GPIO_PIN_RESET);
+						  HAL_GPIO_WritePin(DIR2_GPIO_Port, DIR2_Pin, GPIO_PIN_RESET);
 					  }
 					  break;
 				  case 2:
 					  if(DAC[3][j] >= 0){
-						  HAL_GPIO_WritePin(GPIOB, DIR3_Pin, GPIO_PIN_SET);
+						  HAL_GPIO_WritePin(DIR3_GPIO_Port, DIR3_Pin, GPIO_PIN_SET);
 					  }else{
-						  HAL_GPIO_WritePin(GPIOB, DIR3_Pin, GPIO_PIN_RESET);
+						  HAL_GPIO_WritePin(DIR3_GPIO_Port, DIR3_Pin, GPIO_PIN_RESET);
 					  }
 					  break;
 			  }
