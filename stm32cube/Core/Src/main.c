@@ -187,17 +187,10 @@ int main(void)
   SetDAC(2, 0);
   SetDAC(3, 0);
 
-//  HAL_GPIO_WritePin(GPIOE, CS1_Pin|CS2_Pin, SET);
-//  HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, SET);
-
   // DIR SET means: positive and DIR RESET means: negative
   HAL_GPIO_WritePin(DIR1_GPIO_Port, DIR1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(DIR2_GPIO_Port, DIR2_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(DIR3_GPIO_Port, DIR3_Pin, GPIO_PIN_SET);
-
-  // star communication by UART
-//  uart_buf_len = sprintf(uart_bufT, "Ethernet Communication with DAC\r\n");
-//  HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 
   /* USER CODE END 2 */
 
@@ -544,17 +537,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   }
 }
 
-/*
-void HAL_SPI_TxCpltCallback (SPI_HandleTypeDef * hspi){
-
-	HAL_GPIO_WritePin(GPIOE, CS1_Pin|CS2_Pin, SET);
-	HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, SET);
-
-	state = 0;
-
-}
-*/
-
 void SendSpiMesToDac(uint32_t message){
 	/*
 	 * New function for new DAC converter on version 2 of board
@@ -595,10 +577,7 @@ void SendToDAC(int r)  // original Mehrdad's function
 	}
 
 	int n = round(DAC[r][3]*58);	// 58 to apply values to DAC
-//	int n_delay;
-//	double dif_lim = 0.01;
-	double dif1, dif2, dif3;// max_dif, t_delay;
-//	uint16_t cs[2] = {CS1_Pin, CS2_Pin};
+	double dif1, dif2, dif3;
 
 	// x? this part need for sending correct value in first loop
 	// state = 1;
@@ -627,41 +606,9 @@ void SendToDAC(int r)  // original Mehrdad's function
 	dif2 = fabs(DAC[r][1] - DAC[last_r][1])/n;
 	dif3 = fabs(DAC[r][2] - DAC[last_r][2])/n;
 
-//	max_dif = dif1;
-//	max_dif = MAX(max_dif, dif2);
-//	max_dif = MAX(max_dif, dif3);
-//
-//	if(dif1 > dif_lim){
-//
-//		dif1 = dif_lim;
-//		if(dif1 == max_dif){
-//
-//			n = round(fabs(DAC[r][0] - DAC[last_r][0])/dif1);
-//		}
-//	}
-//	if(dif2 > dif_lim){
-//		dif2 = dif_lim;
-//		if(dif2 == max_dif){
-//
-//			n = round(fabs(DAC[r][1] - DAC[last_r][1])/dif2);
-//		}
-//	}
-//	if(dif3 > dif_lim){
-//		dif3 = dif_lim;
-//		if(dif3 == max_dif){
-//
-//			n = round(fabs(DAC[r][2] - DAC[last_r][2])/dif3);
-//		}
-//	}
-
 	DAC[3][0] = DAC[last_r][0];
 	DAC[3][1] = DAC[last_r][1];
 	DAC[3][2] = DAC[last_r][2];
-
-//	t_delay = (DAC[r][3]*1000)/n;	// microsecond [us]
-//	t_delay = (1*1000)/n;
-//	n_delay = t_delay * 1;		// each 67 step in for equal to 1 us
-//	n_delay = 1;
 
 	if(r == 3){
 		n = 1;
@@ -721,31 +668,11 @@ void SendToDAC(int r)  // original Mehrdad's function
 			  }
 
 			  SetDAC(j, d_in);
-//
-//			  spi_buf[0] = 0x00;
-//			  spi_buf[1] = ((uint8_t*)&d_in)[1];
-//			  spi_buf[2] = ((uint8_t*)&d_in)[0];
-//			  // send value to DAC
-//			  if(j == 2){
-//				  HAL_GPIO_WritePin(CS3_GPIO_Port, CS3_Pin, RESET);
-//
-//			  }else{
-//				  HAL_GPIO_WritePin(GPIOE, cs[j], RESET);
-//			  }
-//			  HAL_SPI_Transmit_IT(&hspi4, (uint8_t *)&spi_buf, 3);
-//
-//			  while(state){}
 		}
-
-		// make delay in us
-//		for(int k = 0; k < n_delay; k++){}
 	}
 
 	t1 = HAL_GetTick();
 	t = t1 - t0;
-//	uart_buf_len = sprintf(uart_bufT, "different time is: %lu ms; NO. steps are: %d\r\n", t, n);
-//	HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
-
 	last_r = r;
 }
 
@@ -792,8 +719,6 @@ int ExtractMessage(char* msg){
 	for(int i = 0; i < strlen(msg); i++){
 		if(msg[i] == ':'){
 			if(strcmp(temp, "DAC") != 0){
-//				uart_buf_len = sprintf(uart_bufT, "wrong msg: %s\r\n\n%s\r\n", (char*)temp, (char*)help);
-//				HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 				return 0;
 			}else{
 
@@ -951,16 +876,6 @@ int ExtractMessage(char* msg){
 							f3 = 0;
 							f1 = 0;
 
-//							gcvt(DAC[2][0], 6, v);	// for converting flaot to string
-//							uart_buf_len = sprintf(uart_bufT, "the message has been registered!\r\n");
-//															  "DAC values: \r\n"
-//											                  "%.5f %.5f %.5f %.0f\r\n"
-//															  "%.5f %.5f %.5f %.0f\r\n"
-//															  "%.5f %.5f %.5f %.0f\r\n"
-//															  , DAC[0][0], DAC[0][1], DAC[0][2], DAC[0][3]
-//															  , DAC[1][0], DAC[1][1], DAC[1][2], DAC[1][3]
-//															  , DAC[2][0], DAC[2][1], DAC[2][2], DAC[2][3]);
-//							HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 							return 2;
 						}
 					}
