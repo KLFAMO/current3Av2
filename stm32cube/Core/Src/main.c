@@ -79,7 +79,7 @@ uint16_t d_in;
 
 */
 double DAC[4][4] = {
-		{0.0, 0.0, 0.0, 1.0},
+		{0.0, 0.0, 0.0, 0.0},
 		{0.1, 0.1, 0.1, 1.0},
 		{-0.1, -0.1, -0.1, 1.0},
 		{0.0, 0.0, 0.0, 1.0}
@@ -792,8 +792,8 @@ int ExtractMessage(char* msg){
 	for(int i = 0; i < strlen(msg); i++){
 		if(msg[i] == ':'){
 			if(strcmp(temp, "DAC") != 0){
-				uart_buf_len = sprintf(uart_bufT, "wrong msg: %s\r\n\n%s\r\n", (char*)temp, (char*)help);
-				HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
+//				uart_buf_len = sprintf(uart_bufT, "wrong msg: %s\r\n\n%s\r\n", (char*)temp, (char*)help);
+//				HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 				return 0;
 			}else{
 
@@ -952,7 +952,7 @@ int ExtractMessage(char* msg){
 							f1 = 0;
 
 //							gcvt(DAC[2][0], 6, v);	// for converting flaot to string
-							uart_buf_len = sprintf(uart_bufT, "the message has been registered!\r\n");
+//							uart_buf_len = sprintf(uart_bufT, "the message has been registered!\r\n");
 //															  "DAC values: \r\n"
 //											                  "%.5f %.5f %.5f %.0f\r\n"
 //															  "%.5f %.5f %.5f %.0f\r\n"
@@ -960,7 +960,7 @@ int ExtractMessage(char* msg){
 //															  , DAC[0][0], DAC[0][1], DAC[0][2], DAC[0][3]
 //															  , DAC[1][0], DAC[1][1], DAC[1][2], DAC[1][3]
 //															  , DAC[2][0], DAC[2][1], DAC[2][2], DAC[2][3]);
-							HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
+//							HAL_UART_Transmit(&huart3, (uint8_t*)uart_bufT, uart_buf_len, 100);
 							return 2;
 						}
 					}
@@ -1018,7 +1018,7 @@ void StartThread(void const * argument)
   err = bind(sock, (struct sockaddr *)&address, sizeof (address));
   err = listen(sock, 0);
 
-//  SendToDAC(3);
+  SendToDAC(3);
 
   // create the acceptance thread
   osThreadDef(Acceptance, AcceptanceNewClient, osPriorityLow, 0, configMINIMAL_STACK_SIZE *2);
