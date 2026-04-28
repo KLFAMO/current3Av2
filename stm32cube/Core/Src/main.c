@@ -39,9 +39,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define FLASH_PARAM_START_ADDR  ((uint32_t)0x081E0000)  // bank 2, sektor 7
-#define FLASH_GTAB_START_ADDR  ((uint32_t)0x081C0000)  // bank 2, sektor 6
 #define FLASH_WORD_SIZE        (32)  // Flash word = 256-bit = 32 bytes
-#define GTAB_SIZE 				1000 // size of gate-current caracteristic table
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -50,10 +48,6 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-
-SPI_HandleTypeDef hspi2;
-SPI_HandleTypeDef hspi4;
-SPI_HandleTypeDef hspi5;
 
 TIM_HandleTypeDef htim7;
 
@@ -87,16 +81,6 @@ int is_new_set_A = 0;
 int calib_cycles_cnt = 0;
 double calib_i_cnt = 0;
 
-double get_adc_lem();
-double get_adc_set();
-double get_set_V();
-double get_lem_A();
-int need_change_sign = 0;
-void set_dac_mos(double dac);
-void send_single_adc_cnv();
-void send_adc_cnvs(int n);
-
-double g_tab[GTAB_SIZE]; // gate-current caracteristic table
 
 void Flash_Write_Array(uint32_t address, double *data, uint32_t size) {
     HAL_FLASH_Unlock();
@@ -193,9 +177,6 @@ static void MPU_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_TIM7_Init(void);
-static void MX_SPI2_Init(void);
-static void MX_SPI4_Init(void);
-static void MX_SPI5_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -249,9 +230,6 @@ int main(void)
   MX_USART3_UART_Init();
   MX_LWIP_Init();
   MX_TIM7_Init();
-  MX_SPI2_Init();
-  MX_SPI4_Init();
-  MX_SPI5_Init();
   /* USER CODE BEGIN 2 */
 
   // tcp_server_init();
@@ -267,19 +245,6 @@ int main(void)
   else{
     Flash_Read_Params(FLASH_PARAM_START_ADDR, &par);
   }
-
-  // read g_tab from flash
-  Flash_Read_Array(FLASH_GTAB_START_ADDR, g_tab, GTAB_SIZE);
-
-  par.gt0.val = g_tab[0];
-  par.gt1.val = g_tab[10];
-  par.gt5.val = g_tab[50];
-  par.gt10.val = g_tab[100];
-  par.calib.val = 4; // lem_A calibration
-
-  HAL_GPIO_WritePin(LEM_RDL_GPIO_Port, LEM_RDL_Pin, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(ADC_CNV_GPIO_Port, ADC_CNV_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, GPIO_PIN_RESET);
 
   HAL_TIM_Base_Start_IT(&htim7);
 
@@ -365,150 +330,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-}
-
-/**
-  * @brief SPI2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_SPI2_Init(void)
-{
-
-  /* USER CODE BEGIN SPI2_Init 0 */
-
-  /* USER CODE END SPI2_Init 0 */
-
-  /* USER CODE BEGIN SPI2_Init 1 */
-
-  /* USER CODE END SPI2_Init 1 */
-  /* SPI2 parameter configuration*/
-  hspi2.Instance = SPI2;
-  hspi2.Init.Mode = SPI_MODE_MASTER;
-  hspi2.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi2.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi2.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi2.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi2.Init.NSS = SPI_NSS_SOFT;
-  hspi2.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
-  hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
-  hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
-  hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-  hspi2.Init.CRCPolynomial = 0x0;
-  hspi2.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
-  hspi2.Init.NSSPolarity = SPI_NSS_POLARITY_LOW;
-  hspi2.Init.FifoThreshold = SPI_FIFO_THRESHOLD_01DATA;
-  hspi2.Init.TxCRCInitializationPattern = SPI_CRC_INITIALIZATION_ALL_ZERO_PATTERN;
-  hspi2.Init.RxCRCInitializationPattern = SPI_CRC_INITIALIZATION_ALL_ZERO_PATTERN;
-  hspi2.Init.MasterSSIdleness = SPI_MASTER_SS_IDLENESS_00CYCLE;
-  hspi2.Init.MasterInterDataIdleness = SPI_MASTER_INTERDATA_IDLENESS_00CYCLE;
-  hspi2.Init.MasterReceiverAutoSusp = SPI_MASTER_RX_AUTOSUSP_DISABLE;
-  hspi2.Init.MasterKeepIOState = SPI_MASTER_KEEP_IO_STATE_DISABLE;
-  hspi2.Init.IOSwap = SPI_IO_SWAP_DISABLE;
-  if (HAL_SPI_Init(&hspi2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN SPI2_Init 2 */
-
-  /* USER CODE END SPI2_Init 2 */
-
-}
-
-/**
-  * @brief SPI4 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_SPI4_Init(void)
-{
-
-  /* USER CODE BEGIN SPI4_Init 0 */
-
-  /* USER CODE END SPI4_Init 0 */
-
-  /* USER CODE BEGIN SPI4_Init 1 */
-
-  /* USER CODE END SPI4_Init 1 */
-  /* SPI4 parameter configuration*/
-  hspi4.Instance = SPI4;
-  hspi4.Init.Mode = SPI_MODE_MASTER;
-  hspi4.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi4.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi4.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi4.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi4.Init.NSS = SPI_NSS_SOFT;
-  hspi4.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
-  hspi4.Init.FirstBit = SPI_FIRSTBIT_MSB;
-  hspi4.Init.TIMode = SPI_TIMODE_DISABLE;
-  hspi4.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-  hspi4.Init.CRCPolynomial = 0x0;
-  hspi4.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
-  hspi4.Init.NSSPolarity = SPI_NSS_POLARITY_LOW;
-  hspi4.Init.FifoThreshold = SPI_FIFO_THRESHOLD_01DATA;
-  hspi4.Init.TxCRCInitializationPattern = SPI_CRC_INITIALIZATION_ALL_ZERO_PATTERN;
-  hspi4.Init.RxCRCInitializationPattern = SPI_CRC_INITIALIZATION_ALL_ZERO_PATTERN;
-  hspi4.Init.MasterSSIdleness = SPI_MASTER_SS_IDLENESS_00CYCLE;
-  hspi4.Init.MasterInterDataIdleness = SPI_MASTER_INTERDATA_IDLENESS_00CYCLE;
-  hspi4.Init.MasterReceiverAutoSusp = SPI_MASTER_RX_AUTOSUSP_DISABLE;
-  hspi4.Init.MasterKeepIOState = SPI_MASTER_KEEP_IO_STATE_DISABLE;
-  hspi4.Init.IOSwap = SPI_IO_SWAP_DISABLE;
-  if (HAL_SPI_Init(&hspi4) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN SPI4_Init 2 */
-
-  /* USER CODE END SPI4_Init 2 */
-
-}
-
-/**
-  * @brief SPI5 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_SPI5_Init(void)
-{
-
-  /* USER CODE BEGIN SPI5_Init 0 */
-
-  /* USER CODE END SPI5_Init 0 */
-
-  /* USER CODE BEGIN SPI5_Init 1 */
-
-  /* USER CODE END SPI5_Init 1 */
-  /* SPI5 parameter configuration*/
-  hspi5.Instance = SPI5;
-  hspi5.Init.Mode = SPI_MODE_MASTER;
-  hspi5.Init.Direction = SPI_DIRECTION_2LINES_TXONLY;
-  hspi5.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi5.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi5.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi5.Init.NSS = SPI_NSS_SOFT;
-  hspi5.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
-  hspi5.Init.FirstBit = SPI_FIRSTBIT_MSB;
-  hspi5.Init.TIMode = SPI_TIMODE_DISABLE;
-  hspi5.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-  hspi5.Init.CRCPolynomial = 0x0;
-  hspi5.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
-  hspi5.Init.NSSPolarity = SPI_NSS_POLARITY_LOW;
-  hspi5.Init.FifoThreshold = SPI_FIFO_THRESHOLD_01DATA;
-  hspi5.Init.TxCRCInitializationPattern = SPI_CRC_INITIALIZATION_ALL_ZERO_PATTERN;
-  hspi5.Init.RxCRCInitializationPattern = SPI_CRC_INITIALIZATION_ALL_ZERO_PATTERN;
-  hspi5.Init.MasterSSIdleness = SPI_MASTER_SS_IDLENESS_00CYCLE;
-  hspi5.Init.MasterInterDataIdleness = SPI_MASTER_INTERDATA_IDLENESS_00CYCLE;
-  hspi5.Init.MasterReceiverAutoSusp = SPI_MASTER_RX_AUTOSUSP_DISABLE;
-  hspi5.Init.MasterKeepIOState = SPI_MASTER_KEEP_IO_STATE_DISABLE;
-  hspi5.Init.IOSwap = SPI_IO_SWAP_DISABLE;
-  if (HAL_SPI_Init(&hspi5) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN SPI5_Init 2 */
-
-  /* USER CODE END SPI5_Init 2 */
-
 }
 
 /**
@@ -607,52 +428,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
+  __HAL_RCC_GPIOE_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(MOS_CS_GPIO_Port, MOS_CS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(L2_RIGHT_GPIO_Port, L2_RIGHT_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LD1_Pin|SET_RDL_Pin|LD3_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, LEM_RDL_Pin|LD2_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(MOS_LDAC_GPIO_Port, MOS_LDAC_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, ADC_CNV_Pin|L2_LEFT_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : SET_BUSY_Pin */
-  GPIO_InitStruct.Pin = SET_BUSY_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(SET_BUSY_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : MOS_CS_Pin */
-  GPIO_InitStruct.Pin = MOS_CS_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(MOS_CS_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : L2_RIGHT_Pin */
-  GPIO_InitStruct.Pin = L2_RIGHT_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(L2_RIGHT_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LD1_Pin LD3_Pin */
   GPIO_InitStruct.Pin = LD1_Pin|LD3_Pin;
@@ -660,40 +448,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : LEM_RDL_Pin */
-  GPIO_InitStruct.Pin = LEM_RDL_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LEM_RDL_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : SET_RDL_Pin */
-  GPIO_InitStruct.Pin = SET_RDL_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(SET_RDL_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : LEM_OK_Pin LEM_BUSY_Pin */
-  GPIO_InitStruct.Pin = LEM_OK_Pin|LEM_BUSY_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : MOS_LDAC_Pin */
-  GPIO_InitStruct.Pin = MOS_LDAC_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(MOS_LDAC_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : ADC_CNV_Pin L2_LEFT_Pin */
-  GPIO_InitStruct.Pin = ADC_CNV_Pin|L2_LEFT_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pin : LD2_Pin */
   GPIO_InitStruct.Pin = LD2_Pin;
@@ -705,101 +459,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
-void send_single_adc_cnv(){
-	HAL_GPIO_WritePin(ADC_CNV_GPIO_Port, ADC_CNV_Pin, GPIO_PIN_SET);
-	__NOP();
-	HAL_GPIO_WritePin(ADC_CNV_GPIO_Port, ADC_CNV_Pin, GPIO_PIN_RESET);
-}
-
-void send_adc_cnvs(int n){
-	for (int i =0; i<n; i++){
-		send_single_adc_cnv();
-	}
-}
-
-#define TIMEOUT_MS 10
-double get_adc_lem(){
-	uint32_t code = 0x000000;
-	double adc_val;
-
-  __NOP(); __NOP(); __NOP(); __NOP(); __NOP();
-  while (LEM_BUSY_GPIO_Port->IDR & LEM_BUSY_Pin) {}
-
-  LEM_RDL_GPIO_Port->BSRR = (uint32_t)LEM_RDL_Pin << 16U;
-  HAL_SPI_Receive(&hspi4, (uint8_t*)spi_buf_lem, 3, 100);
-  LEM_RDL_GPIO_Port->BSRR = LEM_RDL_Pin;
-
-	 ((uint8_t *)&code)[2] = (unsigned int)spi_buf_lem[0];
-	 ((uint8_t *)&code)[1] = (unsigned int)spi_buf_lem[1];
-	 ((uint8_t *)&code)[0] = (unsigned int)spi_buf_lem[2];
-
-	adc_val = code* LSB_ADC;
-	if(code >= HALF_CODE){
-		adc_val -= 2*v_ref;
-	}
-	return adc_val;
-}
-
-double get_adc_set(){
-
-	int adc_val_int=0;
-
-	uint32_t code = 0x000000;
-	double adc_val;
-
-	while (LEM_BUSY_GPIO_Port->IDR & LEM_BUSY_Pin) {}
-
-  SET_RDL_GPIO_Port->BSRR = (uint32_t)SET_RDL_Pin << 16U;
-  HAL_SPI_Receive(&hspi2, (uint8_t*)spi_buf_set, 3, 100);
-  SET_RDL_GPIO_Port->BSRR = SET_RDL_Pin;
-
-	((uint8_t *)&code)[2] = (unsigned int)spi_buf_set[0];
-	((uint8_t *)&code)[1] = (unsigned int)spi_buf_set[1];
-	((uint8_t *)&code)[0] = (unsigned int)spi_buf_set[2];
-
-	adc_val = code* LSB_ADC;
-	if(code >= HALF_CODE){
-		adc_val -= 2*v_ref;
-	}
-	return adc_val;
-}
-
-double get_set_V(){
-	set_v = get_adc_set(); 
-  return (set_v - 0.0085) * 3.316; // tock driver
-}
-
-double get_lem_A(){
-	lem_v = get_adc_lem();
-  return (lem_v + par.lemsh.val )*41.363; // tock driver
-}
-
-void set_dac_mos(double dac){
-	uint32_t code;
-
-	HAL_GPIO_WritePin(MOS_LDAC_GPIO_Port, MOS_LDAC_Pin, GPIO_PIN_SET);
-	dac = dac/2;
-	if(dac > v_ref){
-		dac = v_ref;
-	}else if(dac < 0.0){
-		dac = 0.0;
-	}
-	code = round(dac/LSB_DAC);
-	code = code << 4;		// 4 bits shift to left to have 24 bits
-
-	spi_buf_mos[0] = ((uint8_t*)&code)[2];
-	spi_buf_mos[1] = ((uint8_t*)&code)[1];
-	spi_buf_mos[2] = ((uint8_t*)&code)[0];
-
-	HAL_GPIO_WritePin(MOS_CS_GPIO_Port, MOS_CS_Pin, GPIO_PIN_RESET);
-	HAL_SPI_Transmit(&hspi5, (uint8_t*)&spi_buf_mos, 3, 100);
-	HAL_GPIO_WritePin(MOS_CS_GPIO_Port, MOS_CS_Pin, GPIO_PIN_SET);
-
-	// update output
-	for(int i=0;i<8;i++);	//to make at least 20 ns delay
-	HAL_GPIO_WritePin(MOS_LDAC_GPIO_Port, MOS_LDAC_Pin, GPIO_PIN_RESET);
-}
 
 /* USER CODE END 4 */
 
@@ -861,206 +520,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM7) {
     LD1_GPIO_Port->BSRR = LD1_Pin;
-
-    if (par.calib.val > 0.1){  
-      if (par.calib.val < 1.5){  //calib 1
-        // gate calibration - init state
-        calib_cycles_cnt = 0;
-        calib_i_cnt = 0;
-        par.cur.val = 0;
-        par.mode.val = 2;
-        par.calib.val = 2;
-      }   
-      if (par.calib.val > 1.5 && par.calib.val < 2.5){  //calib 2
-        // gate calibration - increase current
-        if (calib_cycles_cnt > GTAB_SIZE){
-          calib_cycles_cnt = 0;
-          //save results to g_tab
-          g_tab[(int)(calib_i_cnt*10)] = par.vg.val;
-          //set next value
-          calib_i_cnt += 0.1;
-          if (par.cur.val > par.imax.val){
-            par.calib.val = 3;
-          }
-          par.cur.val = calib_i_cnt;
-        }
-      }
-      if (par.calib.val > 2.5 && par.calib.val < 3.5){  //calib 3
-        // gate calibration - decrease current
-        if (calib_cycles_cnt > GTAB_SIZE){
-          calib_cycles_cnt = 0;
-          calib_i_cnt -= 0.1;
-          par.cur.val = calib_i_cnt;
-          if (par.cur.val <= 0){
-            par.cur.val = 0;
-            par.mode.val = 0;
-            par.calib.val = 0;
-            // save g_tab to flash
-            Flash_Write_Array(FLASH_GTAB_START_ADDR, g_tab, GTAB_SIZE);
-            // save some values to control parameters
-            par.gt0.val = g_tab[0];
-            par.gt1.val = g_tab[10];
-            par.gt5.val = g_tab[50];
-            par.gt10.val = g_tab[100];
-          }
-        }
-      }
-      if (par.calib.val > 3.5 && par.calib.val < 4.5){  // calib 4
-        // lem zero current callibration
-        par.mode.val = 0;
-        double acc = 0;
-        for (int i=0; i<100; i++){
-          send_adc_cnvs(25);
-          acc += get_lem_A();
-        }
-        acc = -acc / 100;
-        
-        // par.lemsh.val = 1;
-        par.lemsh.val += acc / 41.363;
-        par.calib.val = 0;
-      }
-      calib_cycles_cnt++;
-    }
-
-	  if (par.mode.val == 0) { // switch off current and reset pi values
-      send_adc_cnvs(25);
-		  par.lemA.val = get_lem_A(); 
-			par.setA.val = get_set_V()*10;
-		  set_dac_mos(0);
-		  err = 0;
-		  acc_err = 0;
-      L2_LEFT_GPIO_Port->BSRR = (uint32_t)L2_LEFT_Pin << 16U; // RESET
-      L2_RIGHT_GPIO_Port->BSRR = (uint32_t)L2_RIGHT_Pin << 16U; // RESET
-	  }
-	  else if (par.mode.val == 1 || par.mode.val == 2) {
-
-      // measure current
-      send_adc_cnvs(25);
-		  lem_A = get_lem_A();
-      
-      // get set current
-      if (par.mode.val == 1){
-			  in_set_v = get_set_V()*10;
-			  set_A = in_set_v; // 1A_lem = 0.1V_set
-		  }
-		  if (par.mode.val == 2){
-			  set_A = par.cur.val;
-		  }
-
-      // check set current direction
-      set_dir = (set_A < 0.0) ? -1 : 1;
-
-      // check if set current is in the same direction as measured current
-      // if not, set set_A to 0
-      set_A = (set_dir == par.dir.val) ? fabs(set_A) : 0;
-
-      // only if measured current is close to 0, change direction if needed
-      if (par.lemA.val < par.dst.val){
-        
-        // set direction same as set_dir
-        setParam(&par.dir, set_dir);
-
-        // set coils direction (hardware)
-        if (par.dir.val==1){
-          // RESET L2_LEFT, SET L2_RIGHT
-          L2_LEFT_GPIO_Port->BSRR = (uint32_t)L2_LEFT_Pin << 16U; // RESET
-          L2_RIGHT_GPIO_Port->BSRR = (uint32_t)L2_RIGHT_Pin;      // SET
-        } else if (par.dir.val==-1){
-          // SET L2_LEFT, RESET L2_RIGHT
-          L2_LEFT_GPIO_Port->BSRR = (uint32_t)L2_LEFT_Pin;        // SET
-          L2_RIGHT_GPIO_Port->BSRR = (uint32_t)L2_RIGHT_Pin << 16U; // RESET
-        } else{
-          // RESET both L2_LEFT and L2_RIGHT
-          L2_LEFT_GPIO_Port->BSRR = (uint32_t)L2_LEFT_Pin << 16U; // RESET
-          L2_RIGHT_GPIO_Port->BSRR = (uint32_t)L2_RIGHT_Pin << 16U; // RESET
-        }
-      }
-      
-		  par.setA.val = in_set_v;
-		  par.lemA.val = lem_A;
-
-      // check if new set_A value
-      if (fabs(last_set_A - set_A) > 0.05){
-        is_new_set_A = 1;
-        acc_err = 0;
-      }
-      else{
-        is_new_set_A = 0;
-      }
-		  last_set_A = set_A;
-
-		  //increase gain I if lower current (because of gate characteristics of transistor)
-		  I = par.I.val;
-
-		  // current change limit for smooth current changes
-		  if ( tmp_set_A > (set_A + par.ermax.val) ){
-			  tmp_set_A = tmp_set_A - par.ermax.val;
-        acc_err = 0;
-		  }
-		  else if ( tmp_set_A < (set_A - par.ermax.val) ){
-			  tmp_set_A = tmp_set_A + par.ermax.val;
-        acc_err = 0;
-		  }
-      else{
-        tmp_set_A = set_A;
-      }
-
-      err = lem_A - tmp_set_A;
-
-      // calculate v_gate voltage based on g_tab
-      int int_set_Ax10;
-      double frac_set_A;
-      double vgs_slope;
-      int_set_Ax10 = (int)(tmp_set_A*10);
-      frac_set_A = tmp_set_A*10 - int_set_Ax10;
-      if ( g_tab[int_set_Ax10] >0 && g_tab[int_set_Ax10+1] >0 ){
-        vgs_slope = (g_tab[int_set_Ax10+1]-g_tab[int_set_Ax10]);
-        vgs = g_tab[int_set_Ax10] + frac_set_A*vgs_slope;
-        if (is_last_gtab_zero == 1){
-          acc_err = 0;
-        }
-        is_last_gtab_zero = 0;
-      }else{
-        if (is_new_set_A == 1){
-          fixed_pid_out = pid_out;
-        }
-        vgs = fixed_pid_out;
-        is_last_gtab_zero = 1;
-      }
-      par.rI.val = I;
-      pid_out = vgs + acc_err*I;
-
-      setParam(&par.vg, pid_out);
-
-		  set_dac_mos(pid_out);
-
-      acc_err = acc_err + err;
-	  }
-
-    else if (par.mode.val == 3) {  // set gate voltage manually
-
-      send_adc_cnvs(25);
-		  par.lemA.val = get_lem_A();
-
-      if (par.lemA.val < par.dst.val){
-        // set coils direction
-        if (par.dir.val>0.5){
-          // RESET L2_LEFT, SET L2_RIGHT
-          L2_LEFT_GPIO_Port->BSRR = (uint32_t)L2_LEFT_Pin << 16U; // RESET
-          L2_RIGHT_GPIO_Port->BSRR = (uint32_t)L2_RIGHT_Pin;      // SET
-        } else if (par.dir.val<-0.5){
-          // SET L2_LEFT, RESET L2_RIGHT
-          L2_LEFT_GPIO_Port->BSRR = (uint32_t)L2_LEFT_Pin;        // SET
-          L2_RIGHT_GPIO_Port->BSRR = (uint32_t)L2_RIGHT_Pin << 16U; // RESET
-        } else{
-          // RESET both L2_LEFT and L2_RIGHT
-          L2_LEFT_GPIO_Port->BSRR = (uint32_t)L2_LEFT_Pin << 16U; // RESET
-          L2_RIGHT_GPIO_Port->BSRR = (uint32_t)L2_RIGHT_Pin << 16U; // RESET
-        }
-      }
-
-		  set_dac_mos(par.vg.val);
-	  }
 
     LD1_GPIO_Port->BSRR = (uint32_t)LD1_Pin << 16U;
     }
